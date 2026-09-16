@@ -1,0 +1,14 @@
+<!doctype html><html><meta charset="utf-8"><title>Static staff privacy compositor</title>
+<style>html,body{margin:0;overflow:hidden}.base{position:absolute;inset:0}.mask{position:absolute;background:#9ba5a80a}</style>
+<script src="../cases/materials.js"></script><script src="staff-masks.js"></script>
+<body><script>
+const q=new URLSearchParams(location.search),slug=q.get('slug'),frame=q.get('frame'),p=PORTFOLIO_MATERIALS.find(p=>p.slug===slug),full=frame==='full';
+const width=full?1000:1600,height=full?({spasibodoctor:5825,semdoc4:5923,remontsurgut:8007,behome:6630}[slug]):900;
+document.documentElement.style.width=width+'px';document.documentElement.style.height=height+'px';
+const img=document.createElement('img');img.className='base';img.width=width;img.height=height;
+img.src=full?`../cases/materials-blurred/${slug}/full.png`:`../cases/materials/${slug}/orbit-${frame}.webp`;document.body.append(img);
+function mask(r){const [x,y,w,h,blur]=r,e=document.createElement('div');e.className='mask';Object.assign(e.style,{left:x+'px',top:y+'px',width:w+'px',height:h+'px',borderRadius:Math.min(h/5,blur)+'px',backdropFilter:`blur(${blur}px)`});document.body.append(e)}
+if(full){for(const [n,rects] of Object.entries(STAFF_MASKS[slug])){const f=p.frames[Number(n)-1],s=Math.min(1,900/f.height),px=(1600-1600*s)/2,py=(900-f.height*s)/2;for(const [x,y,w,h,b] of rects)mask([(x-px)/s/1.6,(f.y+(y-py)/s)/1.6,w/s/1.6,h/s/1.6,b/s/1.6])}}
+else STAFF_MASKS[slug][frame].forEach(mask);
+window.ready=img.decode();
+</script></html>

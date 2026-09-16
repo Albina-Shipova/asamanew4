@@ -1,0 +1,9 @@
+.DS_Store
+
+# local QA and capture artifacts
+tools/.capture-raw/
+tools/.capture-output/
+tools/.contact-audit/
+tools/.quality-check/
+tools/*.png
+cases/tmpcrop.png

@@ -1,0 +1,295 @@
+:root{color-scheme:dark;font-family:Arial,sans-serif;color:#ecebf1;background:#070910}*{box-sizing:border-box}body{margin:0;overflow:hidden;min-height:100svh;background:radial-gradient(ellipse at center,#26334588,transparent 65%)}#ambient{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}button{font:inherit;color:inherit;cursor:pointer;background:#ffffff08;border:1px solid #ffffff30;border-radius:30px;padding:12px 18px}button:hover{border-color:#d1befa}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible{outline:2px solid #b5ffd9;outline-offset:4px}body>header{position:fixed;z-index:5;width:100%;height:76px;display:flex;justify-content:space-between;align-items:center;padding:0 4vw;border-bottom:1px solid #ffffff12;font-size:11px;letter-spacing:.14em}#brand{font-size:14px}.intro{position:absolute;top:90px;left:50%;transform:translateX(-50%);text-align:center;z-index:3;pointer-events:none}.intro small{font-size:9px;letter-spacing:.3em;color:#a3b0b3}.intro h1{font-size:clamp(20px,2vw,30px);font-weight:400;white-space:nowrap;margin:12px}#scene{position:absolute;inset:170px 0 125px;perspective:1400px;touch-action:pan-y;user-select:none}#carousel{position:absolute;inset:0;transform-style:preserve-3d}.card{position:absolute;left:50%;top:50%;width:min(36vw,560px);aspect-ratio:1.46;border:1px solid #e4d9f366;border-radius:19px;overflow:hidden;background:#26333650;box-shadow:0 15px 50px #0008,inset 0 0 24px #ffffff0c;cursor:pointer;padding:0;will-change:transform;backdrop-filter:blur(8px)}.preview{position:absolute;inset:0;overflow:hidden}.cover{width:100%;height:100%;object-fit:cover;display:block;opacity:.45}.full{position:absolute;top:0;left:0;width:100%;height:auto;opacity:0;will-change:transform}.active .full{opacity:.8}.active .cover{opacity:0}.card:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#05091322 20%,#07081205 45%,#080911dd);pointer-events:none}.info{position:absolute;z-index:2;bottom:23px;left:20px;right:20px;text-align:left;text-shadow:0 2px 15px #000;pointer-events:none}.info img{max-width:110px;max-height:30px;object-fit:contain;display:block;margin-bottom:13px;background:#090e1390;padding:4px;border-radius:3px}.info h2{margin:0;font-size:clamp(20px,2.2vw,32px);font-weight:400}.info small{font-size:8px;letter-spacing:.2em}nav{position:absolute;bottom:56px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:24px;z-index:4}nav span{font-size:12px;letter-spacing:.2em;min-width:68px;text-align:center}.hint{position:absolute;bottom:15px;width:100%;text-align:center;color:#87899c;font-size:10px}dialog{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;border:0;padding:0;background:radial-gradient(ellipse at center,#263044,#080b14 65%);color:white;overflow:hidden}dialog[open]{display:grid;grid-template-rows:80px 1fr 80px}dialog::backdrop{background:#05060bef}dialog header,footer{display:flex;align-items:center;justify-content:space-between;padding:0 4vw;z-index:10;background:#080b1490}dialog h2{font-size:18px;font-weight:400}dialog header a{font-size:12px;border:1px solid #ffffff30;border-radius:30px;padding:13px 20px}footer{justify-content:center;gap:25px}#stage{position:relative;perspective:1400px;overflow:hidden}#logo{position:absolute;left:50%;top:22%;translate:-50% -50%;width:150px;max-height:90px;object-fit:contain;filter:drop-shadow(0 0 30px #b4a6ff)}#frames{position:absolute;inset:0;transform-style:preserve-3d}.frame{position:absolute;left:50%;top:59%;width:min(45vw,620px);aspect-ratio:16/9;overflow:hidden;padding:0;border-radius:12px;transition:transform .65s,opacity .65s;box-shadow:0 15px 45px #0009;background:#080b14}.frame img{width:100%;height:100%;object-fit:contain;display:block}.frame span{position:absolute;bottom:8px;right:10px;background:#000b;padding:4px 8px;font-size:10px}@media(max-width:700px){body>header{height:64px;padding:0 18px}#total{display:none}#brand{font-size:12px}.intro{top:79px}#scene{inset:140px 0 140px}.card{width:76vw;border-radius:14px}.info{left:16px;bottom:16px}.info h2{font-size:24px}.hint{padding:0 25px;line-height:1.6;bottom:12px;font-size:9px}nav{bottom:66px}.frame{width:82vw;top:60%}dialog[open]{grid-template-rows:70px 1fr 70px}dialog header{padding:0 10px;gap:10px}dialog header button{font-size:10px;padding:10px}dialog header a{font-size:10px;padding:10px}dialog h2{font-size:14px}#logo{width:120px}}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* Portkar3 — immersive vertical orbit */
+body{background:radial-gradient(ellipse at 50% 45%,#153c3a55,transparent 43%),radial-gradient(ellipse at 12% 95%,#32255766,transparent 55%),#060b10}
+body:before{content:'';position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 25%,#03060b99 100%);z-index:2}
+body>header{height:100px;border:0;padding:0 42px;z-index:6;align-items:center}#brand{font-size:25px;font-weight:700;letter-spacing:.18em}.brand-dot{font-size:10px;vertical-align:top;margin-left:5px;letter-spacing:0}#total{font-size:9px;opacity:.5;letter-spacing:.22em}#pause{font-size:11px;padding:12px 20px;backdrop-filter:blur(12px)}
+.intro{top:auto;bottom:115px;left:42px;transform:none;text-align:left;z-index:4}.intro small{font-size:8px;letter-spacing:.16em;color:#9ca9ac}.intro h1{font-size:18px;letter-spacing:-.025em;margin:12px 0;color:#d8e0df}
+#scene{inset:0;touch-action:none;overflow:hidden;perspective-origin:50% 50%}
+.card{width:min(48vw,680px);aspect-ratio:1.53;border-radius:22px;border:1px solid #b8e4e44a;background:#182d30a6;box-shadow:0 30px 90px #0006,inset 0 0 30px #c8eaff12;backdrop-filter:blur(12px);transition:border-color .3s;isolation:isolate}
+.card.active{border-color:#aad9d77a}.card:hover{border-color:#d9f6eab0}.card:before{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;border-radius:inherit;box-shadow:inset 1px 1px 1px #d0f8ed55,inset -1px -1px 1px #d7a1df55;background:linear-gradient(125deg,#a3e6df13,transparent 40%,#a196ca0a)}
+.card:after{background:linear-gradient(180deg,#08151b12 35%,#08131966 65%,#030911ee)}.cover{opacity:.62}.active .full{opacity:.94}.info{left:28px;right:28px;bottom:25px}.info img{max-width:90px;max-height:23px;margin-bottom:10px}.info h2{font-size:clamp(24px,2.6vw,38px);letter-spacing:-.045em;margin-top:7px}.info small{font-size:8px;letter-spacing:.18em;color:#bfcfcf}.active .info:after{content:'Исследовать ↗';position:absolute;right:0;bottom:6px;font-size:10px;letter-spacing:.03em;color:#d6e7e5}
+nav{bottom:34px;gap:20px;z-index:5}nav button{width:44px;height:44px;padding:0;background:#07121866;backdrop-filter:blur(12px)}nav span{font-size:10px;letter-spacing:.15em}.hint{bottom:36px;right:42px;width:220px;text-align:right;font-size:9px;line-height:1.8;z-index:4;color:#99adaa}
+dialog{z-index:20;background:radial-gradient(ellipse at 50% 50%,#163736,#080d16 70%)}dialog:modal{max-width:100vw}dialog header,dialog footer{background:#07101488}.frame{border-color:#a0cece44}#logo{top:14%;max-height:60px}.frame{top:55%;width:min(50vw,720px)}
+.no-webgl #ambient{display:none}.no-webgl #scene{background:radial-gradient(ellipse at 50% 45%,#32807535,transparent 45%)}
+@media(max-width:700px){body>header{height:80px;padding:0 20px}#brand{font-size:20px}#pause{padding:10px 15px;font-size:10px}.card{width:84vw;border-radius:17px;aspect-ratio:1.35}.info{left:18px;right:18px;bottom:18px}.info h2{font-size:27px}.active .info:after{display:none}.intro{left:20px;bottom:117px}.intro h1{font-size:16px}.intro small{font-size:7px}.hint{right:20px;bottom:17px;width:calc(100% - 40px);padding:0;text-align:center;font-size:8px}nav{bottom:49px}.frame{width:86vw;top:54%}dialog header a{padding:9px 8px;font-size:9px}dialog h2{max-width:110px;font-size:12px}#logo{top:16%;max-height:50px}}
+@media(max-height:600px) and (min-width:701px){body>header{height:65px}.intro{bottom:80px}.card{width:43vw}.hint{bottom:25px}nav{bottom:20px}}
+
+/* Keep the back of each rotating card visible, including mirrored content. */
+.card{backface-visibility:visible}
+.card.preview-started .full{opacity:.94}
+.card.preview-started .cover{opacity:0}
+.card.active:not(.preview-started) .cover{opacity:.94}
+
+/* Portkar4: five explicit positions and readable mirrored backs. */
+.card{transform-style:preserve-3d;transform-origin:50% 50%;transition:border-color .3s,filter .3s}
+.card .preview,.card .info{backface-visibility:visible}
+.card.showing-back{filter:saturate(.78) brightness(.86)}
+.card.showing-back:before{background:linear-gradient(125deg,#07141c99,#24323b73 45%,#25192e9c);box-shadow:inset 1px 1px 1px #d7eef04d,inset -1px -1px 1px #c797d84d}
+.card.showing-back:after{background:linear-gradient(180deg,#06131a70,#0710188c 58%,#02060bea)}
+.card[data-slot="1"],.card[data-slot="5"]{box-shadow:0 25px 80px #000a,inset 0 0 34px #0a111bbf}
+
+nav button{position:relative;isolation:isolate;overflow:visible;border-color:transparent;transition:transform .25s ease,color .25s ease,background .25s ease}
+nav button span{position:relative;display:block;z-index:2;line-height:42px;transition:transform .35s cubic-bezier(.2,.8,.2,1);will-change:transform}
+nav button:before{content:'';position:absolute;inset:-1px;border-radius:50%;border:1px solid #89aaa7aa;border-top-color:#d7fff4;border-right-color:#b88ce4;z-index:1;transition:filter .25s ease,box-shadow .25s ease;will-change:transform}
+nav button:after{content:'';position:absolute;inset:-5px;border-radius:50%;border:1px solid transparent;z-index:0;opacity:0;box-shadow:0 0 22px #9adcc5a8;pointer-events:none}
+nav button:hover:before,nav button:focus-visible:before{animation:nav-ring 1.3s linear infinite;filter:brightness(1.5);box-shadow:0 0 16px #9bdac47a}
+#prev:hover span,#prev:focus-visible span{animation:arrow-hover-left .8s ease-in-out infinite}
+#next:hover span,#next:focus-visible span{animation:arrow-hover-right .8s ease-in-out infinite}
+nav button.is-pressed{animation:button-press .5s cubic-bezier(.2,.8,.2,1)}
+nav button.is-pressed:after{animation:nav-pulse .65s ease-out}
+#prev.is-pressed span{animation:arrow-through-left .55s ease both}
+#next.is-pressed span{animation:arrow-through-right .55s ease both}
+nav.moving-prev #prev,nav.moving-next #next{color:#d9fff4;background:#15352f99}
+nav.moving-prev #prev:before,nav.moving-next #next:before{animation:nav-ring .8s linear infinite;box-shadow:0 0 22px #91e7cb9c}
+@keyframes nav-ring{to{transform:rotate(360deg)}}
+@keyframes button-press{35%{transform:scale(.84)}70%{transform:scale(1.08)}to{transform:scale(1)}}
+@keyframes nav-pulse{0%{opacity:1;transform:scale(.72)}to{opacity:0;transform:scale(1.55)}}
+@keyframes arrow-hover-left{50%{transform:translateX(-5px)}}
+@keyframes arrow-hover-right{50%{transform:translateX(5px)}}
+@keyframes arrow-through-left{0%{transform:translateX(0);opacity:1}45%{transform:translateX(-22px);opacity:0}55%{transform:translateX(18px);opacity:0}100%{transform:translateX(0);opacity:1}}
+@keyframes arrow-through-right{0%{transform:translateX(0);opacity:1}45%{transform:translateX(22px);opacity:0}55%{transform:translateX(-18px);opacity:0}100%{transform:translateX(0);opacity:1}}
+@media(prefers-reduced-motion:reduce){nav button,nav button:before,nav button:after,nav button span{animation:none!important;transition:none!important}}
+
+/* Invite the next step even before hover; respect the shared motion control. */
+#next:not(.is-pressed):not(:hover):not(:focus-visible){animation:next-invite 3.2s ease-in-out infinite}
+#next:not(.is-pressed):not(:hover):not(:focus-visible) span{animation:next-nudge 3.2s ease-in-out infinite}
+#next:not(.is-pressed):not(:hover):not(:focus-visible):after{border-color:#dce5e580;animation:next-beacon 3.2s ease-out infinite}
+@keyframes next-invite{0%,65%,100%{transform:scale(1);box-shadow:0 0 0 #dce5e500}20%,38%{transform:scale(1.12);box-shadow:0 0 24px #dce5e55c}29%{transform:scale(1.03)}}
+@keyframes next-nudge{0%,12%,44%,100%{transform:translateX(0)}22%,35%{transform:translateX(5px)}}
+@keyframes next-beacon{0%,60%,100%{opacity:0;transform:scale(1)}12%{opacity:.8;transform:scale(1)}48%{opacity:0;transform:scale(1.65)}}
+.motion-paused nav button,.motion-paused nav button:before,.motion-paused nav button:after,.motion-paused nav button span{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){#next,#next:after,#next span{animation:none!important}}
+
+/* Let clicks reach the cards behind the carousel's 3D plane. */
+#carousel{pointer-events:none}
+
+.brand-lockup{display:grid;grid-template-columns:auto auto;align-items:baseline;column-gap:13px;row-gap:7px}
+.brand-lockup #brand{line-height:1;white-space:nowrap;transition:color .2s}
+.brand-section{font-size:13px;letter-spacing:.025em;color:#b4b8c0;white-space:nowrap}
+.brand-section>span{color:#727985;margin-right:7px;font-weight:400}
+.brand-home{grid-column:1 / -1;justify-self:start;color:#a1a8b2;font-size:10px;letter-spacing:.025em;line-height:1.3;text-underline-offset:4px}
+.brand-home span{display:inline-block;margin-left:3px;transition:transform .2s}
+.brand-home:hover{text-decoration:underline;color:#e6eeee}.brand-home:hover span{transform:translate(1px,-1px)}
+.brand-lockup #brand:hover{color:#cce6e1}
+@media(max-width:700px){.brand-lockup{column-gap:8px;row-gap:6px}.brand-lockup #brand{font-size:18px;letter-spacing:.14em}.brand-section{font-size:11px}.brand-section>span{margin-right:3px}.brand-home{font-size:9px}}
+@media(max-width:360px){body>header{padding-inline:14px}.brand-lockup{column-gap:5px}.brand-lockup #brand{font-size:16px}.brand-section{font-size:10px}#pause{padding:9px 10px}}
+
+.card.active{cursor:zoom-in}.frame{transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .35s}.frame:hover{z-index:50!important;opacity:1!important}.hint{max-width:320px}
+
+.card.active{cursor:zoom-in}.frame{transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .35s}.frame:hover{filter:brightness(1.2);opacity:1!important}.hint{max-width:320px}
+
+/* Compact, readable radial project orbit */
+#logo{left:50%;top:50%;z-index:1;pointer-events:none;filter:drop-shadow(0 0 24px #b4a6ff88)}#frames{z-index:2}.frame{width:min(26vw,380px);aspect-ratio:16/10;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .35s;transform-origin:center center}.frame:hover{filter:brightness(1.15)}@media(max-width:700px){.frame{width:48vw}#logo{width:110px}}
+
+/* Live project inspector, following the supplied in-page modal example. */
+dialog.inspector{z-index:100;background:#03070dcc;color:#eef4f3;backdrop-filter:blur(14px)}dialog.inspector[open]{display:flex;align-items:center;justify-content:center;padding:clamp(12px,3vw,40px)}dialog.inspector::backdrop{background:#020409d9;backdrop-filter:blur(9px)}.inspector-shell{width:min(1180px,100%);height:min(820px,100%);overflow:hidden;display:flex;flex-direction:column;border:1px solid #c5e7df38;border-radius:18px;background:#0a1118;box-shadow:0 35px 110px #000e,0 0 45px #79d8bd18}.inspector-shell header{position:static;width:auto;height:auto;min-height:68px;padding:12px 18px 12px 24px;background:#0d161f;border-bottom:1px solid #ffffff14}.inspector-shell header>div{display:flex;align-items:baseline;gap:14px}.inspector-shell small{font-size:8px;letter-spacing:.2em;color:#7ddbbd}.inspector-shell h2{margin:0;font-size:17px}.inspector-shell button{padding:10px 14px;font-size:10px}.inspector-viewport{position:relative;flex:1;min-height:0;background:#fff}.inspector-viewport iframe{display:block;width:100%;height:100%;border:0;background:#fff}@media(max-width:700px){dialog.inspector[open]{padding:0}.inspector-shell{width:100%;height:100%;border:0;border-radius:0}.inspector-shell header{min-height:64px;padding:10px 12px}.inspector-shell header>div{display:block}.inspector-shell small{display:block;margin-bottom:4px}.inspector-shell h2{font-size:14px}}
+
+/* The homepage remains fixed in the centre; every other page is evenly spaced around it. */
+.frame.is-focused-frame{border-color:#caffed!important;filter:brightness(1.14) saturate(1.08);box-shadow:0 24px 72px #000c,0 0 0 2px #a7f8df5c,0 0 34px #8ee9ce42}.frame:not(.is-focused-frame){filter:saturate(.76) brightness(.82)}
+
+/* Keep the hover target fixed while its visual preview grows. */
+#frames{pointer-events:none}
+.frame{width:min(13vw,190px);overflow:visible;border:0;background:transparent;box-shadow:none;transition:transform .45s cubic-bezier(.2,.8,.2,1);filter:none!important;pointer-events:auto}
+.frame-visual{position:absolute;inset:0;display:block;overflow:hidden;border:1px solid #a0cece44;border-radius:12px;background:#080b14;box-shadow:0 15px 45px #0009;opacity:var(--frame-opacity,.72);transform:translate(var(--frame-shift-x,0),var(--frame-shift-y,0)) scale(var(--frame-scale,1));transform-origin:center;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .35s,filter .35s,box-shadow .35s,border-color .35s}
+.frame-visual>img{width:100%;height:100%;object-fit:contain;display:block}
+.frame-number{position:absolute;right:10px;bottom:8px;padding:4px 8px;background:#000b;font-size:10px}
+.frame.is-focused-frame .frame-visual{border-color:#caffed;filter:brightness(1.14) saturate(1.08);box-shadow:0 24px 72px #000c,0 0 0 2px #a7f8df5c,0 0 34px #8ee9ce42}
+.frame:not(.is-focused-frame) .frame-visual{filter:saturate(.76) brightness(.82)}
+
+/* Rasterize the visual at 4x its small hit target, then only scale down.
+   Keep the original hit boxes, orbit coordinates and hover transforms intact. */
+#frames .frame-visual{inset:auto;left:calc(-150% + 15px);top:calc(-150% + 12px);width:calc(400% - 40px);height:calc(400% - 32px);padding:16px 32px;border-width:4px;border-radius:48px;transform:translate(var(--frame-shift-x,0),var(--frame-shift-y,0)) scale(calc(var(--frame-scale,1) / 4));box-shadow:0 60px 180px #0009}
+#frames .frame-number{right:40px;bottom:32px;padding:8px 12px;font-size:28px}
+#frames .frame.is-focused-frame .frame-visual{filter:none;box-shadow:0 96px 288px #000c,0 0 0 8px #c6ff3233,0 0 136px #c6ff3226}
+
+/* Final-size 2D screenshot; deliberately outside the perspective subtree. */
+.sharp-preview{position:fixed;z-index:8;pointer-events:none;user-select:none;transform:none;filter:none}
+.sharp-preview[hidden]{display:none}
+.sharp-preview>img{display:block;width:100%;height:100%;object-fit:contain}
+.sharp-preview-number{position:absolute;display:grid;place-items:center;white-space:nowrap}
+.sharp-preview-ready .is-focused-frame .frame-number{visibility:hidden}
+
+/* The live preview is 20% larger, capped to the available viewport. */
+dialog.inspector[open]{padding:12px}
+.inspector-shell{width:min(1416px,calc(100vw - 24px));height:min(984px,calc(100svh - 24px))}
+.inspector-viewport{isolation:isolate}
+.inspector-viewport iframe{pointer-events:auto}
+.live-contact-mask{position:absolute;z-index:20;display:block;pointer-events:auto;cursor:default;background:rgba(70,78,80,.42);border:1px solid rgba(220,235,230,.2);border-radius:4px;box-shadow:0 0 10px rgba(0,0,0,.14);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);transform:scale(1.08)}
+.live-contact-mask--header{left:84%;top:4%;width:15%;height:10%;transform:none;border-radius:3px;background:rgba(70,78,80,.38)}
+.live-contact-mask--contact{transform:none;background:rgba(70,78,80,.32)}
+.live-brand-mask{position:absolute;z-index:22;left:1%;top:3%;width:22%;height:14%;display:flex;align-items:center;gap:.45em;padding:0 .55em;box-sizing:border-box;border-radius:4px;background:#15181c;color:#f4f4f4;font:700 clamp(12px,1.2vw,20px)/1 Arial,sans-serif;letter-spacing:.02em;pointer-events:auto;white-space:nowrap}
+.live-brand-mask__mark{display:inline-flex;align-items:center;justify-content:center;width:1.55em;height:1.55em;border-radius:.25em;background:#fff;color:#ef5b18;font-size:.6em;letter-spacing:0}
+.live-behome-phone{left:3%;top:15%;width:31%;height:16%;transform:none;background:rgba(40,45,48,.46)}
+.live-behome-vk{left:3%;top:32%;width:32%;height:14%;transform:none;background:rgba(40,45,48,.46)}
+@media(max-width:700px){.frame{width:24vw}.inspector-shell{width:100%;height:100%}dialog.inspector[open]{padding:0}}
+
+/* Portkar 12 refinements. */
+nav{gap:24px}
+nav button{width:76px;height:52px;display:grid;place-items:center;border-radius:999px}
+nav button span{width:24px;height:24px;display:grid;place-items:center;line-height:1}
+nav button svg{display:block;width:24px;height:24px;overflow:visible;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}
+nav button.arrow-next svg{transform:rotate(180deg)}
+#next:not(.is-pressed):not(:hover):not(:focus-visible),#next:not(.is-pressed):not(:hover):not(:focus-visible) span{animation:none}
+.hint{width:max-content;max-width:calc(100vw - 40px)}
+.hint span{display:block;white-space:nowrap}
+#orbit>footer{position:relative}
+.orbit-page-nav,.orbit-project-nav{display:flex;align-items:center}
+.orbit-page-nav{gap:25px}
+.orbit-project-nav{position:absolute;right:4vw;gap:8px}
+.orbit-project-nav small{margin-right:3px;color:#91aaa6;font-size:8px;letter-spacing:.18em}
+.orbit-project-nav button{width:48px;height:40px;padding:0;display:grid;place-items:center;border-radius:999px}
+.frame{width:min(16.9vw,247px)}
+@media(max-width:700px){nav button{width:68px;height:48px}.hint{right:20px;width:calc(100% - 40px)}.hint span{white-space:normal}.orbit-project-nav{right:10px;gap:5px}.orbit-project-nav small{display:none}.orbit-project-nav button{width:40px;height:38px}.frame{width:31.2vw}}
+
+/* Portkar 13: an explicit lighter mode for slower computers and connections. */
+.motion-controls{display:flex;align-items:center;gap:9px}
+.motion-controls button{font-size:10px;padding:12px 17px;white-space:nowrap;backdrop-filter:blur(12px)}
+#less-motion{border-color:#9fcfc64d;color:#c4d5d2}
+#less-motion[aria-pressed="true"]{border-color:#b9eadc;background:#17332e;color:#e5fff7;box-shadow:0 0 22px #79d8bd22}
+.less-motion .card:not(.active){backdrop-filter:none}
+@media(max-width:700px){.motion-controls{gap:6px}.motion-controls button{padding:10px 11px;font-size:9px}#total{display:none}}
+@media(max-width:520px){#pause{width:40px;padding:10px 0;font-size:0}#pause:after{content:'Ⅱ';font-size:12px}.motion-controls button{padding-inline:9px}#less-motion{max-width:106px;white-space:normal;line-height:1.15}.brand-home{display:none}}
+@media(max-width:360px){.motion-controls{gap:4px}#less-motion{max-width:88px;font-size:8px}.brand-lockup{column-gap:4px}.brand-section{display:none}}
+
+/* Portkar 13: improve the small interface copy on large displays. */
+@media(min-width:701px){
+ .hint{font-size:11px;line-height:1.75}
+ .motion-controls button{font-size:11px}
+ .intro small{font-size:10px}
+ .brand-home{font-size:11px}
+}
+
+/* Portkar 14: keep compositing work limited to what can actually be seen. */
+.card{will-change:auto}
+.card.is-visible{will-change:transform}
+.card:not(.is-visible){content-visibility:hidden;contain:layout paint style}
+.card:not(.active){backdrop-filter:none}
+.card:not(.active) .cover{opacity:.78}
+.card.showing-back{filter:saturate(.88) brightness(.96)}
+.card.showing-back:before{background:linear-gradient(125deg,#07141c3d,#24323b2e 45%,#25192e42)}
+.card.showing-back:after{background:linear-gradient(180deg,#06131a24,#07101838 58%,#02060b82)}
+.card.showing-back .cover{opacity:.84}
+.full,.cover{transform:translateZ(0)}
+
+/* Portkar 16: purpose-built phone composition instead of a squeezed desktop scene. */
+@media(max-width:700px){
+ body>header{height:82px;padding:14px 16px 0;align-items:flex-start;background:linear-gradient(180deg,#060b10e8,transparent)}
+ .brand-lockup{row-gap:5px}
+ .brand-home{font-size:8px}
+ .motion-controls{margin-top:0}
+ .motion-controls button{min-height:38px}
+ #scene{inset:82px 0 92px;perspective-origin:50% 44%}
+ .card{width:88vw;aspect-ratio:1.42;border-radius:17px}
+ .card:not(.active) .info{left:12px;right:12px;bottom:11px;opacity:.72}
+ .card:not(.active) .info img,.card:not(.active) .info small{display:none}
+ .card:not(.active) .info h2{font-size:15px;letter-spacing:-.025em}
+ .card.active .info{left:18px;right:18px;bottom:17px}
+ .card.active .info h2{font-size:26px}
+ .intro{display:none}
+ nav{bottom:43px;gap:13px}
+ nav button{width:62px;height:46px}
+ nav span{min-width:55px}
+ .hint{left:50%;right:auto;bottom:7px;width:max-content;max-width:calc(100% - 24px);padding:4px 11px;transform:translateX(-50%);border:1px solid #ffffff0d;border-radius:20px;background:#060b10d9;font-size:8px;line-height:1.45;white-space:nowrap}
+ .hint span{display:none}
+ .hint:after{content:'Свайп — выбор · Нажмите — открыть'}
+ #orbit>footer{justify-content:flex-start;padding:0 10px}
+ .orbit-page-nav{gap:9px}
+ .orbit-page-nav button{width:42px;height:38px;padding:0}
+ .orbit-project-nav{right:10px}
+}
+@media(max-width:420px){
+ .brand-lockup #brand{font-size:17px}
+ .brand-section{font-size:10px}
+ .motion-controls button{min-height:36px}
+ #less-motion{max-width:96px}
+}
+@media(max-height:700px) and (max-width:700px){
+ #scene{inset:72px 0 82px}
+ .intro{display:none}
+ nav{bottom:37px}
+ .hint{bottom:5px}
+}
+
+/* Screenshot-only fullscreen gallery. No external project is opened. */
+.screens-only{font-size:9px;letter-spacing:.18em;color:#91a7a3}
+dialog.inspector[open]{padding:0}
+.inspector-shell{width:100vw;height:100svh;max-width:none;max-height:none;border:0;border-radius:0;background:#05090d}
+.inspector-shell header{flex:0 0 auto;min-height:68px}
+.inspector-viewport{display:grid;grid-template-columns:minmax(54px,8vw) minmax(0,1fr) minmax(54px,8vw);align-items:stretch;overflow:hidden;background:radial-gradient(circle at 50% 45%,#22303b,#05090d 68%);touch-action:pan-y}
+.inspector-figure{position:relative;min-width:0;min-height:0;margin:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.inspector-figure img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 24px 50px #000b);user-select:none;-webkit-user-drag:none}
+.inspector-figure figcaption{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);padding:8px 14px;border:1px solid #ffffff20;border-radius:999px;background:#03070dcc;color:#cbd8d5;font-size:10px;letter-spacing:.12em;white-space:nowrap}
+.inspector-arrow{position:relative;z-index:2;width:100%;height:100%;padding:0;border:0;border-radius:0;background:linear-gradient(90deg,#03070dcc,transparent);font-size:clamp(28px,5vw,64px);color:#dce8e5;opacity:.75}
+.inspector-arrow--next{background:linear-gradient(270deg,#03070dcc,transparent)}
+.inspector-arrow:hover,.inspector-arrow:focus-visible{opacity:1;background-color:#93e5c310}
+@media(max-width:700px){.screens-only{display:none}.inspector-viewport{grid-template-columns:50px minmax(0,1fr) 50px}.inspector-figure figcaption{bottom:10px;font-size:8px}.inspector-arrow{font-size:30px}}
+
+/* Laptop performance: reduce GPU-heavy effects while preserving image quality. */
+@media (prefers-reduced-motion: no-preference) { .frame-visual { transition-duration: .28s; } }
+@media (max-width: 1100px) { .card,.dialog,.inspector-shell { backdrop-filter:none!important; -webkit-backdrop-filter:none!important; } .frame-visual { box-shadow:0 10px 28px #0008!important; } #frames .frame-visual { box-shadow:0 36px 100px #0009!important; } }
+
+
+@media(max-width:1100px){.frame-visual{transition:none!important;filter:none!important}.frame:not(.is-focused-frame) .frame-visual{opacity:.55}.frame-visual{box-shadow:0 8px 20px #0007!important}}
+
+
+/* Readable interaction hints */
+.hint{font-size:14px!important;line-height:1.7!important;color:#e8f1f0!important;text-shadow:0 2px 10px #000;letter-spacing:.02em;z-index:20}
+.hint span{display:block!important;white-space:normal!important}
+@media(max-width:700px){.hint{font-size:12px!important;line-height:1.55!important;bottom:12px!important;padding:7px 12px!important;background:#060b10e6;border-radius:10px}}
+
+
+.privacy-note{position:fixed;left:28px;bottom:22px;z-index:30;max-width:390px;color:#d7e2df;background:#071014d9;border:1px solid #b5d8cc44;border-radius:10px;padding:10px 13px;font-size:11px;line-height:1.45;letter-spacing:.02em;box-shadow:0 4px 18px #0008}@media(max-width:700px){.privacy-note{left:12px;bottom:10px;max-width:calc(100vw - 24px);font-size:10px;padding:8px 10px}}
+
+
+#pointer-orb{position:fixed;left:0;top:0;width:18px;height:18px;border-radius:50%;background:rgba(8,12,14,.62);border:1px solid rgba(220,240,235,.35);box-shadow:0 2px 10px #0008;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s,height .18s,opacity .18s;opacity:0}body.pointer-ready #pointer-orb{opacity:1}body.pointer-over-card #pointer-orb{width:30px;height:30px;background:transparent;border:2px solid #d9f6ea;box-shadow:0 0 0 3px #07101488,0 0 16px #b5ffe988}@media(pointer:coarse){#pointer-orb{display:none}}
+
+
+.orbit-privacy-note,.inspector-privacy-note{position:absolute;left:28px;bottom:22px;z-index:12;max-width:440px;color:#cbd8d4;background:#071014d9;border:1px solid #b5d8cc44;border-radius:9px;padding:8px 11px;font-size:10px;line-height:1.4;letter-spacing:.02em}.inspector-privacy-note{left:50%;bottom:18px;transform:translateX(-50%);max-width:520px;text-align:center;pointer-events:none}@media(max-width:700px){.orbit-privacy-note,.inspector-privacy-note{left:12px;right:12px;bottom:10px;max-width:none;font-size:9px}.inspector-privacy-note{transform:none}}
+
+
+/* Keep the privacy notice in the header flow, outside the screenshot. */
+#inspector .inspector-shell > header {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(280px,580px) minmax(0,1fr);
+  gap:20px;
+  align-items:center;
+}
+#inspector .inspector-shell > header > div:first-child { min-width:0; flex-wrap:wrap; gap:6px 14px; }
+#inspector-title { overflow-wrap:anywhere; }
+#inspector-close { justify-self:end; }
+#inspector .inspector-privacy-note {
+  position:static;
+  inset:auto;
+  transform:none;
+  width:100%;
+  max-width:none;
+  margin:0;
+  text-align:center;
+  font-size:13px;
+  line-height:1.45;
+  pointer-events:auto;
+}
+@media(max-width:1100px) {
+  #inspector .inspector-shell > header { grid-template-columns:minmax(0,1fr) auto; gap:10px 16px; }
+  #inspector .inspector-privacy-note { grid-column:1 / -1; grid-row:2; justify-self:center; max-width:640px; font-size:12px; }
+  #inspector-close { grid-column:2; grid-row:1; }
+}
+
+/* Hide the native arrow/hand/zoom cursor only while the custom cursor is visible. */
+@media (pointer: fine) {
+  body.pointer-ready,
+  body.pointer-ready *,
+  body.pointer-ready *::before,
+  body.pointer-ready *::after,
+  body.pointer-ready dialog::backdrop { cursor:none !important; }
+}
+
+#frames .frame-visual{transition-duration:.32s}
+@media (prefers-reduced-motion: reduce){#frames .frame-visual{transition:none!important}}
+
+/* Stable focus highlight: brightness fades in without reverse flicker. */
+#frames .frame-visual{transition:opacity .28s ease,filter .28s ease,box-shadow .28s ease,border-color .28s ease;filter:brightness(.62) saturate(.82)}
+#frames .is-focused-frame .frame-visual{filter:brightness(1) saturate(1.05)}
+#frames .is-focused-frame .frame-visual img{opacity:1}
+@media (prefers-reduced-motion: reduce){#frames .frame-visual{transition:none!important}}

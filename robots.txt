@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://asama.site/sitemap.xml

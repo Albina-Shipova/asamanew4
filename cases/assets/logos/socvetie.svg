@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 92" role="img" aria-labelledby="title">
+  <title id="title">Соцветие</title>
+  <rect width="360" height="92" rx="16" fill="#f1eee7"/>
+  <g fill="none" stroke="#764d42" stroke-width="3">
+    <circle cx="45" cy="46" r="9" fill="#c8a78f"/>
+    <circle cx="45" cy="27" r="10"/>
+    <circle cx="64" cy="40" r="10"/>
+    <circle cx="57" cy="61" r="10"/>
+    <circle cx="33" cy="61" r="10"/>
+    <circle cx="26" cy="40" r="10"/>
+  </g>
+  <text x="86" y="57" fill="#2f2422" font-family="Georgia,serif" font-size="34" letter-spacing="1">Соцветие</text>
+</svg>

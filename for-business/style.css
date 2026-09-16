@@ -1,0 +1,181 @@
+/* Внутренняя страница ASAMA: сетка, палитра и ритм главной. */
+body.business-page {
+  --section-air:clamp(24px,2.2vw,32px);
+  --fg:var(--c-ink-850);
+  --muted:var(--c-ink-350);
+  --border:var(--c-ink-150);
+  color:var(--c-ink-050);
+  background:var(--c-black);
+}
+.business-page [hidden] { display:none!important; }
+.business-page main { display:block; }
+.business-page main section { padding-block:clamp(56px,6vw,80px); }
+.business-page main section>.container { width:100%;max-width:1480px; }
+.business-page h2 { font-size:var(--h-lg);line-height:1.04;letter-spacing:-.045em; }
+.business-page h2 em { font-style:normal; }
+.business-page .business-lead { max-width:650px;font-size:clamp(15px,1.15vw,17px);line-height:1.65;color:var(--c-ink-350);margin-top:22px; }
+.business-page .business-back { display:inline-block;font-size:13px;line-height:1.5;color:var(--c-ink-250); }
+.business-page a:focus-visible,.business-page button:focus-visible { outline:2px solid var(--c-lime);outline-offset:5px; }
+.business-page.has-sector .business-intro { display:none; }
+
+/* Выбор сферы: первый экран и спокойная витрина, как у форматов. */
+.business-page .business-intro {
+  padding-top:calc(var(--header-h) + 54px);
+  background:var(--c-ink-050)!important;color:var(--c-ink-850);border:0;
+}
+.business-intro>.container { position:relative; }
+.business-intro>.container::before { content:'';position:absolute;top:0;right:40px;width:38%;height:310px;background:url('../assets/format-company.webp') center/contain no-repeat;pointer-events:none; }
+.business-intro h1 { position:relative;font-size:clamp(2.4rem,3.5vw,3.55rem);line-height:1.03;letter-spacing:-.045em;margin:26px 0 0;max-width:65%; }
+.business-page .business-intro>.container>.business-lead { position:relative;max-width:55%; }
+.business-page .business-intro .business-back { color:var(--c-ink-350); }
+.business-prompt { font-family:var(--font-display);font-size:21px;font-weight:600;letter-spacing:-.025em;margin:60px 0 24px; }
+.business-sector-grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px; }
+.business-sector { display:grid;grid-template-columns:1fr auto;align-content:start;gap:0 12px;min-width:0;padding:14px 14px 24px;border:1px solid var(--c-ink-150);border-radius:16px;background:var(--c-paper);color:var(--c-ink-850);transition:border-color .2s; }
+.business-sector img { width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;grid-column:1/-1;border-radius:9px;margin-bottom:20px; }
+.business-page .business-sector h2 { font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.035em; }
+.business-sector p { font-size:13px;color:var(--c-ink-350);margin-top:9px; }
+.business-sector>div { padding-left:8px; }
+.business-sector>span { display:grid;place-items:center;width:34px;height:34px;margin-right:6px;border:1px solid var(--c-ink-200);border-radius:50%;font-size:20px; }
+.business-sector:hover { border-color:var(--c-lime-ink); }
+.business-sector:hover>span { background:var(--c-lime);border-color:var(--c-lime); }
+
+/* Отраслевой первый экран: один заголовок, фотография в архитектурной композиции. */
+.business-page section.business-story {
+  display:flex;align-items:center;min-height:690px;padding-top:calc(var(--header-h) + 54px);padding-bottom:70px;
+  background:var(--c-black)!important;color:var(--c-ink-050);border-top:0;isolation:isolate;scroll-margin-top:0;
+}
+.business-story::before { content:'';position:absolute;inset:0 0 0 42%;z-index:-2;background:url('../assets/architecture-dark.webp') center/cover no-repeat;opacity:.9; }
+.business-story::after { content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,var(--c-black) 34%,rgba(8,10,9,.25) 70%,transparent);pointer-events:none; }
+.business-story>.container { position:relative;z-index:2; }
+.business-story-head { display:flex;align-items:center;gap:24px;max-width:650px;margin-bottom:28px; }
+#sector-name { color:var(--c-ink-200);font-size:12px;font-weight:600;letter-spacing:.08em; }
+#change-sector { margin-left:auto;font-size:12px; }
+.business-page #story-title { font-size:clamp(2.4rem,3.4vw,3.55rem);line-height:1.04;letter-spacing:-.045em;max-width:640px;outline:none; }
+#story-title em { color:var(--c-lime); }
+.business-page #story-intro { max-width:560px;color:var(--c-ink-250);margin-top:24px; }
+
+/* Три сомнения: светлые карточки с той же геометрией, что у форматов. */
+.business-page section.business-problems { background:var(--c-ink-050)!important;color:var(--c-ink-850);border-color:var(--c-ink-150); }
+.business-pains { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px; }
+.business-pains article { padding:32px;border:1px solid var(--c-ink-150);border-radius:16px;background:var(--c-paper); }
+.business-pains article::before { content:'';display:block;width:28px;height:2px;background:var(--c-lime-ink);margin-bottom:28px; }
+.business-pains h3 { font-size:22px;letter-spacing:-.035em;margin-bottom:18px;line-height:1.2; }
+.business-pains p { color:var(--c-ink-350);font-size:15px;line-height:1.65; }
+
+/* Сравнение: типографика и компактные панели главной, без кислотной заливки. */
+.business-page section.business-compare { background:var(--c-ink-050)!important;color:var(--c-ink-850);border-top:0;padding-top:0; }
+.business-compare h2 { max-width:850px; }
+.business-compare-grid { display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px; }
+.business-compare-grid>div { padding:32px 36px;border-radius:18px;background:#e6e8e2;border:1px solid var(--c-ink-150); }
+.business-compare-grid>div:last-child { background:var(--c-paper);border-color:var(--c-lime-mid); }
+.business-compare-grid h3 { font-size:23px;line-height:1.2;letter-spacing:-.035em;color:var(--c-ink-850);margin-bottom:20px; }
+.business-compare-grid li { display:flex;gap:15px;padding:16px 0;border-top:1px solid var(--c-ink-200);font-size:15px;line-height:1.5;color:var(--c-ink-500); }
+.business-compare-grid li::before { content:'−';flex-shrink:0;color:var(--c-ink-350); }
+.business-compare-grid>div:last-child li::before { content:'✓';color:var(--c-lime-ink); }
+.business-note { color:var(--c-ink-350);font-size:13px;line-height:1.6;max-width:830px;margin-top:24px; }
+
+/* Путь клиента: тёмная полоса и последовательность работы, как на главной. */
+.business-page section.business-path { background:var(--c-black)!important;color:var(--c-ink-050);border-color:var(--c-ink-600); }
+.business-path-head { display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:end; }
+.business-path-head h2 { font-size:var(--h-md);line-height:1.1;max-width:800px; }
+.business-page .business-path-head .business-lead { color:var(--c-ink-250);font-size:15px;margin-top:0;max-width:430px; }
+.business-journey { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;list-style:none;margin-top:48px; }
+.business-journey li { position:relative;min-width:0;border-top:1px solid var(--c-ink-500);padding-top:24px; }
+.business-journey li>span { display:grid;place-items:center;width:38px;height:38px;background:var(--c-ink-700);border:1px solid var(--c-ink-500);border-radius:50%;font-size:12px;color:var(--c-lime);margin-bottom:22px; }
+.business-journey h3 { font-size:19px;line-height:1.25;margin-bottom:12px; }
+.business-journey p { color:var(--c-ink-250);font-size:14px;line-height:1.6;max-width:270px; }
+.business-journey li:not(:last-child)::after { content:'→';position:absolute;right:0;top:28px;color:var(--c-ink-350); }
+
+/* Пример: светлая витрина и крупный, читаемый скриншот проекта. */
+.business-page section.business-example { background:var(--c-ink-050)!important;color:var(--c-ink-850);border-color:var(--c-ink-150); }
+.business-example>.container { display:grid;grid-template-columns:1.25fr 1fr;gap:0 60px;align-items:start; }
+.business-page .business-example .business-lead { margin-top:0;font-size:15px;max-width:500px; }
+.business-case { grid-column:1/-1;display:grid;grid-template-columns:1.65fr 1fr;align-items:center;gap:40px;margin-top:32px;padding:20px;border:1px solid var(--c-ink-150);border-radius:18px;background:var(--c-paper); }
+.business-case img { width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:10px;background:var(--c-ink-100); }
+.business-case>div { padding:20px 30px; }
+.business-case p { font-size:13px;color:var(--c-ink-350); }
+.business-case h3 { margin:18px 0 30px;font-size:clamp(26px,3vw,42px);letter-spacing:-.04em; }
+.business-case span { display:inline-block;padding:12px 22px;border-radius:999px;background:var(--c-lime);color:var(--c-ink-850);font-size:14px; }
+.business-case:hover { border-color:var(--c-lime-ink); }
+
+.business-page #contact { scroll-margin-top:var(--header-h); }
+
+@media(max-width:1200px) {
+  .business-page #story-title { max-width:54%;font-size:clamp(36px,4vw,48px); }
+  .business-page #story-intro { max-width:50%; }
+  .business-story-head { max-width:54%;flex-wrap:wrap;gap:12px; }
+  #change-sector { margin-left:0; }
+  .business-pains article { padding:26px; }
+  .business-path-head { gap:30px; }
+}
+@media(max-width:900px) {
+  .business-sector-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .business-pains { gap:14px; }
+  .business-pains article { padding:22px; }
+  .business-pains h3 { font-size:19px; }
+  .business-journey { grid-template-columns:repeat(2,minmax(0,1fr));gap:30px; }
+  .business-journey li:nth-child(2)::after { display:none; }
+  .business-example>.container { gap:0 30px; }
+  .business-case { grid-template-columns:1.4fr 1fr;gap:10px; }
+  .business-case>div { padding:20px; }
+}
+@media(max-width:760px) {
+  .business-page main section { padding-block:44px; }
+  .business-intro>.container::before { display:none; }
+  .business-intro h1,.business-page .business-intro>.container>.business-lead { max-width:100%; }
+  .business-page .business-intro { padding-top:calc(var(--header-h) + 32px); }
+  .business-prompt { margin-top:36px; }
+  .business-page section.business-story { display:block;min-height:0;padding-top:calc(var(--header-h) + 36px);padding-bottom:44px; }
+  .business-story::before { inset:42% 0 0 0;background-position:center; }
+  .business-story::after { background:linear-gradient(var(--c-black) 25%,transparent); }
+  .business-story-head { max-width:100%;margin-bottom:24px;justify-content:space-between; }
+  .business-page #story-title { max-width:100%;font-size:clamp(32px,6vw,44px); }
+  .business-page #story-intro { max-width:100%;font-size:15px; }
+  .business-pains { grid-template-columns:1fr; }
+  .business-pains article { padding:26px; }
+  .business-pains article::before { margin-bottom:20px; }
+  .business-compare-grid { grid-template-columns:1fr;gap:16px;margin-top:26px; }
+  .business-compare-grid>div { padding:26px; }
+  .business-compare-grid h3 { font-size:21px; }
+  .business-path-head,.business-example>.container { grid-template-columns:1fr;gap:20px; }
+  .business-page .business-example .business-lead { margin-top:0; }
+  .business-journey { margin-top:32px; }
+  .business-case { grid-template-columns:1fr;padding:12px;margin-top:12px; }
+  .business-case>div { padding:14px 12px 20px; }
+  .business-case h3 { margin:12px 0 22px; }
+}
+@media(max-width:480px) {
+  .business-sector-grid { grid-template-columns:1fr; }
+  .business-page #story-title { font-size:32px; }
+  .business-journey { grid-template-columns:1fr;gap:24px; }
+  .business-journey li { display:grid;grid-template-columns:38px 1fr;gap:0 18px;padding-top:20px; }
+  .business-journey li>span { grid-row:1/3;margin:0; }
+  .business-journey li p { grid-column:2;max-width:none; }
+  .business-journey li::after { display:none; }
+  .business-journey h3 { margin-bottom:8px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .business-page { scroll-behavior:auto; }
+  .business-page * { scroll-behavior:auto!important; }
+  .business-sector { transition:none; }
+}
+/* Выбор отрасли также начинается с первого экрана в стиле главной. */
+.business-page.has-sector .business-chooser { display:none; }
+.business-page .business-intro { display:flex;align-items:center;min-height:620px;background:var(--c-black)!important;color:var(--c-ink-050);padding-bottom:80px; }
+.business-page .business-intro>.container { color:var(--c-ink-050); }
+.business-intro>.container::before { top:50%;right:-40px;transform:translateY(-50%);width:52%;height:520px;mask-image:linear-gradient(90deg,transparent,#000 18%);background-image:url('../assets/hero-architecture.webp');background-size:cover; }
+.business-intro h1 { color:var(--c-ink-050);font-size:clamp(2.4rem,3.4vw,3.55rem);max-width:54%; }
+.business-page .business-intro>.container>.business-lead { max-width:48%;color:var(--c-ink-250); }
+.business-page .business-intro .business-back { color:var(--c-ink-250); }
+.business-page section.business-chooser { background:var(--c-ink-050)!important;color:var(--c-ink-850); }
+.business-page .business-chooser>.container { color:var(--c-ink-850); }
+.business-prompt { color:var(--c-ink-850);margin-top:0; }
+@media(max-width:760px) {
+  .business-page .business-intro { display:block;min-height:0;padding-bottom:40px; }
+  .business-intro>.container::before { display:block;position:relative;top:auto;right:auto;transform:none;float:right;width:100%;height:300px;margin:20px -20px 0 0; }
+  .business-intro>.container { display:flex;flex-direction:column; }
+  .business-intro>.container::before { order:4; }
+  .business-intro h1,.business-page .business-intro>.container>.business-lead { max-width:100%; }
+}
+
+

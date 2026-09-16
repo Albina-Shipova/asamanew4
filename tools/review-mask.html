@@ -1,0 +1,9 @@
+<!doctype html><html><meta charset="utf-8"><title>Отзывы — скрытие фамилий</title>
+<style>html,body{margin:0;overflow:hidden;position:relative}.base{position:absolute;inset:0}.mask{position:absolute;background:#a5aaae0a;border-radius:4px}</style>
+<script src="../cases/materials.js"></script><script src="review-masks.js"></script><body><script>
+const q=new URLSearchParams(location.search),slug=q.get('slug'),full=q.has('full'),spec=REVIEW_MASKS[slug],width=full?1000:1600,height=full?spec.height:900;
+for(const e of [document.documentElement,document.body]){e.style.width=width+'px';e.style.height=height+'px'}
+const img=document.createElement('img');img.className='base';img.width=width;img.height=height;img.src=full?`../cases/materials-blurred/${slug}/${spec.full}`:`../cases/materials/${slug}/orbit-${spec.frame}.webp`;document.body.append(img);
+const p=PORTFOLIO_MATERIALS.find(p=>p.slug===slug),f=p.frames.find(f=>f.src.includes(`orbit-${spec.frame}.`)),s=Math.min(1,900/f.height),px=(1600-1600*s)/2,py=(900-f.height*s)/2;
+for(const r of spec.rects){let[x,y,w,h,b]=r;if(full){x=(x-px)/s/1.6;y=(f.y+(y-py)/s)/1.6;w/=s*1.6;h/=s*1.6;b/=s*1.6}const e=document.createElement('div');e.className='mask';Object.assign(e.style,{left:x+'px',top:y+'px',width:w+'px',height:h+'px',backdropFilter:`blur(${b}px)`});document.body.append(e)}
+</script></body></html>
