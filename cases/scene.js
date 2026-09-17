@@ -76,7 +76,7 @@ try{
   `
  });
  energy=new T.Mesh(geometry,material);energy.frustumCulled=false;world.add(energy);
- // A restrained digital rain layer, generated locally from a monochrome atlas.
+ // A restrained digital rain layer built from a monochrome atlas.
  const rainAtlas=document.createElement('canvas');rainAtlas.width=256;rainAtlas.height=256;
  const rc=rainAtlas.getContext('2d'),chars='01{}[]<>/=;:+-*?';
  rc.font='32px Consolas, monospace';rc.textAlign='center';rc.textBaseline='middle';rc.fillStyle='#e2e2e2';rc.shadowColor='#ddd';rc.shadowBlur=3;

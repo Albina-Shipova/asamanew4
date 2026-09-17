@@ -45,7 +45,7 @@ const businessData={
   "medical": {
     "label": "МЕДИЦИНЫ",
     "title": "Человеку нужна помощь.<br><em>Почему он не решается обратиться?</em>",
-    "intro": "Пациент ищет профиль специалиста, понятный ответ и ближайшее время приёма. Неясность заставляет его продолжать поиск.",
+    "intro": "Покажем направления клиники, специалистов и ответы на частые вопросы. Пациент сможет понять, к кому обратиться, и связаться с администратором.",
     "pains": [
       [
         "01",
@@ -72,7 +72,7 @@ const businessData={
     "good": [
       "Профиль врача и услуги понятны.",
       "Есть ответы на частые вопросы.",
-      "Расписание и запись рядом.",
+      "Контакт администратора рядом с услугой.",
       "Пациент приходит подготовленным."
     ],
     "query": "Поиск · врач и клиника рядом",
@@ -87,7 +87,7 @@ const businessData={
   "beauty": {
     "label": "КРАСОТЫ И КОСМЕТОЛОГИИ",
     "title": "Клиентка выбирает процедуру.<br><em>Почему запись уходит конкурентам?</em>",
-    "intro": "Клиент сравнивает процедуры, специалистов и стоимость. Собранные в одном месте услуги и понятная запись помогают сделать выбор.",
+    "intro": "Соберём процедуры, информацию о специалистах и условия в одном месте. Добавим удобный переход к записи: по телефону, в мессенджере или через согласованный сервис.",
     "pains": [
       [
         "01",
@@ -295,9 +295,9 @@ const businessData={
     ]
   }
 };
-const businessCases={"dentistry":["estetica","ESTETICA","Стоматология"],"medical":["semdoc4","Семейный Доктор","Медицинский центр"],"beauty":["krasivaya","Красивая Ты","Красота и уход"],"massage":["touch","Прикосновение","Массаж и уход за телом"],"build":["remontsurgut","Ремонт Сургут","Ремонт квартир"],"design":["belous","Виктория Черноус","Дизайн интерьеров"],"hotel":["les","ЛЕС","Отдых и гостеприимство"]};
+const businessCases={"dentistry":["zdorzub","ЗдорЗуб","Стоматология"],"medical":["spasibodoctor","Спасибо, Доктор!","Медицинский центр"],"beauty":["krasivaya","Красивая Ты","Красота и уход"],"massage":["touch","Прикосновение","Массаж и уход за телом"],"build":["remontsurgut","РемПроф","Ремонт квартир"],"design":["belous","Виктория Черноус","Дизайн интерьеров"],"hotel":["les","ЛЕС","Отдых и гостеприимство"]};
 const scenario=document.getElementById('business-scenario');
-const businessField=document.getElementById('business-field');
+
 const chooser=document.querySelector('.business-sector-grid');
 const prompt=document.querySelector('.business-prompt');
 const titles={"dentistry":"Стоматология","medical":"Медицина","beauty":"Красота и косметология","massage":"Массажные кабинеты","build":"Ремонт и строительство","design":"Дизайн интерьеров","hotel":"Гостиничный бизнес и развлечения"};
@@ -306,8 +306,8 @@ function showBusiness(scroll=false){
  const d=Object.hasOwn(businessData,key)?businessData[key]:null;
  scenario.hidden=!d; chooser.hidden=!!d; prompt.hidden=!!d;
  document.body.classList.toggle('has-sector',!!d);
- if(!d){businessField.value='';businessField.defaultValue='';document.title='Сайт для вашего бизнеса — ASAMA';return;}
- businessField.value=titles[key];businessField.defaultValue=titles[key];
+ if(!d){document.title='Сайт для вашего бизнеса — ASAMA';return;}
+
  document.title='Сайт для бизнеса: '+titles[key]+' — ASAMA';
  document.getElementById('sector-name').textContent=titles[key];
  document.getElementById('story-title').innerHTML=d.title;
@@ -326,5 +326,3 @@ function showBusiness(scroll=false){
 chooser.addEventListener('click',e=>{const a=e.target.closest('[data-sector]');if(!a||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();history.pushState(null,'',a.href);showBusiness(true);});
 document.getElementById('change-sector').addEventListener('click',e=>{if(e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();history.pushState(null,'',e.currentTarget.href);showBusiness();document.querySelector('[data-sector]').focus({preventScroll:true});document.getElementById('choose').scrollIntoView();});
 addEventListener('popstate',()=>showBusiness());showBusiness();
-
-

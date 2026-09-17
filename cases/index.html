@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="styles.css?v=cursor-only-1">
  <link rel="stylesheet" href="theme.css">
  <script src="contact-blur-map.js?v=1"></script>
-</head>
+<link rel="stylesheet" href="../css/site-upgrades.css"></head>
 <body><div id="pointer-orb" aria-hidden="true"></div>
  <canvas id="ambient" aria-hidden="true"></canvas>
  <header>
@@ -49,7 +49,7 @@
   <p class="hint"><span>Листайте или тяните · Нажмите пробел для следующего</span><span>Нажмите на проект, чтобы исследовать</span></p>
  </main>
  <dialog id="orbit">
-  <header><button id="close">← К проектам</button><h2 id="title"></h2><span class="screens-only">СКРИНШОТЫ ПРОЕКТА</span></header>
+  <header><button id="close">← К проектам</button><h2 id="title"></h2><a id="project-visit" hidden target="_blank" rel="noopener noreferrer">Посетить сайт ↗</a></header>
   <div id="stage"><img id="logo" alt="" loading="lazy" decoding="async"><div id="frames"></div></div>
   <div class="orbit-privacy-note">Блюр лиц, контактов и адресов — соблюдение 152-ФЗ (ст. 7) и ст. 152.1–152.2 ГК РФ.</div><footer><div class="orbit-page-nav"><button id="fp" aria-label="Предыдущая страница">←</button><span id="fs"></span><button id="fn" aria-label="Следующая страница">→</button></div><div class="orbit-project-nav"><small>ПРОЕКТЫ</small><button id="project-prev" aria-label="Предыдущий проект">←</button><button id="project-next" aria-label="Следующий проект">→</button></div></footer>
  </dialog>
@@ -58,11 +58,12 @@
  </dialog>
  <script src="materials.js?v=estetica-combined-1"></script>
  <script src="masked-materials.js?v=reviews-1"></script>
+<script src="reviewed-materials.js"></script>
  <script src="vendor/three.min.js"></script>
 <script src="script.js?v=cursor-only-1"></script>
  <script src="scene.js"></script>
  <script src="sharp-preview.js?v=static-contacts-2"></script>
-<div class="privacy-note">Блюр лиц, контактов и адресов — защита персональных данных по 152-ФЗ (ст. 7), ст. 152.1 и 152.2 ГК РФ.</div></body>
+<div class="privacy-note">Контактные данные и персональная информация в демонстрационных материалах скрыты.</div><script src="../js/site-upgrades.js"></script></body>
 </html>
 
 

@@ -100,7 +100,7 @@ window.PORTFOLIO_MATERIALS=[
         "height": 1006
       },
       {
-        "src": "materials/tai2/orbit-08.webp",
+        "src": "materials/tai2/orbit-08-new.webp",
         "label": "Раздел 8",
         "y": 6383,
         "height": 650
@@ -536,7 +536,7 @@ window.PORTFOLIO_MATERIALS=[
   {
     "slug": "krasivaya",
     "name": "Красивая Ты",
-    "url": "https://krasivaya.asama.site/",
+    "url": "https://красивая-ты.рф/",
     "logo": "assets/logos/krasivaya.png",
     "cover": "materials/krasivaya/cover.webp",
     "full": "materials/krasivaya/full.webp",
@@ -703,9 +703,9 @@ window.PORTFOLIO_MATERIALS=[
   },
   {
     "slug": "remontsurgut",
-    "name": "Ремонт Сургут",
+    "name": "РемПроф",
     "url": "https://remontsurgut.asama.site/",
-    "logo": "assets/logos/remontsurgut.png",
+    "logo": "assets/logos/remprof.svg",
     "cover": "materials/remontsurgut/cover.webp",
     "full": "materials/remontsurgut/full.webp",
     "width": 1600,
@@ -760,7 +760,7 @@ window.PORTFOLIO_MATERIALS=[
         "height": 848
       },
       {
-        "src": "materials/remontsurgut/orbit-09.webp",
+        "src": "materials/remontsurgut/orbit-09-new.webp",
         "label": "Люди, отвечающиеза результатвашего объекта",
         "y": 8241,
         "height": 987
@@ -951,52 +951,81 @@ window.PORTFOLIO_MATERIALS=[
     "width": 1600,
     "height": 4639,
     "frames": [
-      {"src":"materials/socvetie/orbit-01.webp","label":"Место, которое рекомендуют близким","y":0,"height":640},
-      {"src":"materials/socvetie/orbit-02.webp","label":"Ближайшие семинары","y":640,"height":706},
-      {"src":"materials/socvetie/orbit-03.webp","label":"Вам нас порекомендовали?","y":1346,"height":441},
-      {"src":"materials/socvetie/orbit-04.webp","label":"Семинары по заявкам","y":1787,"height":557},
-      {"src":"materials/socvetie/orbit-05.webp","label":"Преимущества семинаров","y":2344,"height":672},
-      {"src":"materials/socvetie/orbit-06.webp","label":"Консультации и специалисты","y":3016,"height":689},
-      {"src":"materials/socvetie/orbit-07.webp","label":"Отзывы","y":3705,"height":934}
+      {
+        "src": "materials/socvetie/orbit-01.webp",
+        "label": "Место, которое рекомендуют близким",
+        "y": 0,
+        "height": 640
+      },
+      {
+        "src": "materials/socvetie/orbit-02.webp",
+        "label": "Ближайшие семинары",
+        "y": 640,
+        "height": 706
+      },
+      {
+        "src": "materials/socvetie/orbit-03.webp",
+        "label": "Вам нас порекомендовали?",
+        "y": 1346,
+        "height": 441
+      },
+      {
+        "src": "materials/socvetie/orbit-04.webp",
+        "label": "Семинары по заявкам",
+        "y": 1787,
+        "height": 557
+      },
+      {
+        "src": "materials/socvetie/orbit-05.webp",
+        "label": "Преимущества семинаров",
+        "y": 2344,
+        "height": 672
+      },
+      {
+        "src": "materials/socvetie/orbit-06.webp",
+        "label": "Консультации и специалисты",
+        "y": 3016,
+        "height": 689
+      },
+      {
+        "src": "materials/socvetie/orbit-07.webp",
+        "label": "Отзывы",
+        "y": 3705,
+        "height": 934
+      }
     ]
   },
   {
-    "slug": "jaluzeperm",
-    "name": "Жалюзи Мастер",
-    "url": "https://jaluzeperm.asama.site/",
-    "previewUrl": "https://jaluzeperm.asama.site/",
-    "logo": "assets/logos/jaluzeperm.webp",
-    "cover": "materials/jaluzeperm/cover.webp",
-    "full": "materials/jaluzeperm/full.webp",
-    "width": 1600,
-    "height": 6716,
+    "slug": "zdorzub",
+    "name": "ЗдорЗуб",
+    "url": "https://github.com/asamasite/zdorzub",
+    "logo": "assets/logos/zdorzub.svg",
+    "cover": "materials/zdorzub/cover.webp",
+    "full": "materials/zdorzub/full.webp",
+    "width": 1536,
+    "height": 1024,
     "frames": [
-      {"src":"materials/jaluzeperm/orbit-01.webp","label":"Свет под контролем","y":0,"height":900},
-      {"src":"materials/jaluzeperm/orbit-02.webp","label":"Решение под каждое окно","y":900,"height":900},
-      {"src":"materials/jaluzeperm/orbit-04.webp","label":"Готовые окна и шоурум","y":3146,"height":900},
-      {"src":"materials/jaluzeperm/orbit-05.webp","label":"От окна — к готовому решению","y":4124,"height":666},
-      {"src":"materials/jaluzeperm/orbit-06.webp","label":"Шоурум Жалюзи Мастер","y":4790,"height":900},
-      {"src":"materials/jaluzeperm/orbit-07.webp","label":"Приходите потрогать ткани","y":5520,"height":900},
+      {
+        "src": "materials/zdorzub/orbit-01.webp",
+        "label": "Интерьер и ресепшен клиники",
+        "y": 0,
+        "height": 1024
+      },
+      {
+        "src": "materials/zdorzub/orbit-02.webp",
+        "label": "Современный стоматологический кабинет",
+        "y": 1024,
+        "height": 1024
+      },
+      {
+        "src": "materials/zdorzub/orbit-03.webp",
+        "label": "Результат лечения",
+        "y": 2048,
+        "height": 1024
+      }
     ]
   }
 ];
 
-const PORTFOLIO_ORDER=[
-  "remontsurgut",
-  "touch",
-  "socvetie",
-  "krasivaya",
-  "tai2",
-  "behome",
-  "estetica",
-  "les",
-  "semdoc4",
-  "belous",
-  "jaluzeperm",
-  "spasibodoctor",
-  "gracekelly",
-  "bmstair",
-  "stroyservis39"
-];
+const PORTFOLIO_ORDER=["touch","socvetie","krasivaya","zdorzub","tai2","behome","estetica","les","semdoc4","belous","spasibodoctor","gracekelly","bmstair","stroyservis39","remontsurgut"];
 window.PORTFOLIO_MATERIALS.sort((a,b)=>PORTFOLIO_ORDER.indexOf(a.slug)-PORTFOLIO_ORDER.indexOf(b.slug));
-

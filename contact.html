@@ -25,7 +25,7 @@
 <meta name="twitter:image" content="https://asama.site/assets/og-image.jpg">
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/style.css">
-</head>
+<link rel="stylesheet" href="css/site-upgrades.css"></head>
 <body>
 
 <header class="site-header">
@@ -34,7 +34,7 @@
       <a href="index.html" class="logo" aria-label="Asama — главная">A S A M A</a>
       <nav class="nav-links">
         <a href="index.html#services">Цены</a>
-        <a href="cases/index.html">Кейсы</a>
+        <a href="cases/index.html">Портфолио</a>
         <a href="for-business/index.html">Для бизнеса</a>
         <a href="index.html#process">Как мы работаем</a>
         <a href="index.html#reviews">Отзывы</a>
@@ -43,7 +43,7 @@
       </nav>
     </div>
     <div class="nav-cta">
-      <a href="contact.html#full-contact-form" class="btn btn-primary">Обсудить проект</a>
+      <a href="contact.html#direct-contact" class="btn btn-primary">Обсудить проект</a>
       <button class="nav-toggle" aria-label="Открыть меню"><span></span><span></span></button>
     </div>
   </div>
@@ -107,49 +107,8 @@
       </div>
 
       <div class="contact-form-card">
-        <h3>Оставить заявку</h3>
-        <form id="full-contact-form" novalidate>
-          <input type="checkbox" name="botcheck" style="display:none">
-
-          <label class="field-label" for="fc-name">Ваше имя</label>
-          <input type="text" id="fc-name" name="name" class="quiz-input" placeholder="Иван Иванов" required>
-
-          <label class="field-label" for="fc-contact">Телефон, Telegram или email</label>
-          <input type="text" id="fc-contact" name="contact" class="quiz-input"
-            placeholder="+7 999 000-00-00, @username или email@example.com" required>
-
-          <label class="field-label" for="fc-business">Чем занимается ваш бизнес</label>
-          <input type="text" id="fc-business" name="business" class="quiz-input"
-            placeholder="Коротко: сфера, услуги" required>
-
-          <label class="field-label" for="fc-has-site">Есть ли сайт сейчас <span class="optional">(необязательно)</span></label>
-          <select id="fc-has-site" name="hasSite" class="quiz-input">
-            <option value="">Выберите вариант</option>
-            <option value="Да, есть">Да, есть</option>
-            <option value="Нет">Нет</option>
-          </select>
-
-          <label class="field-label" for="fc-site-url">Ссылка на текущий сайт <span class="optional">(необязательно)</span></label>
-          <input type="text" id="fc-site-url" name="siteUrl" class="quiz-input" placeholder="https://">
-
-          <label class="field-label" for="fc-references">Ссылки на сайты, которые вам нравятся <span class="optional">(необязательно)</span></label>
-          <textarea id="fc-references" name="references" class="quiz-input" placeholder="По одной ссылке на строку"></textarea>
-
-          <label class="field-label" for="fc-message">Кратко о задаче</label>
-          <textarea id="fc-message" name="message" class="quiz-input" placeholder="Что нужно сделать, какие есть пожелания…" required></textarea>
-
-          <label class="consent-row">
-            <input type="checkbox" name="consent_privacy_policy" value="да" required>
-            <span>Я ознакомлен(а) с <a href="privacy-policy.html" target="_blank">политикой конфиденциальности</a></span>
-          </label>
-          <label class="consent-row">
-            <input type="checkbox" name="consent_pd_processing" value="да" required>
-            <span>Я даю <a href="pd-consent.html" target="_blank">согласие на обработку персональных данных</a></span>
-          </label>
-
-          <button type="submit" class="btn btn-primary" style="width:100%;">Отправить заявку</button>
-          <p class="form-status" id="full-form-status" role="status"></p>
-        </form>
+        <h3>Связаться с нами</h3>
+        <div class="direct-contact-card" id="direct-contact"><h3>Обсудим ваш сайт?</h3><p>Расскажите, чем занимается ваш бизнес и что хотите изменить. Подскажем подходящий формат и стоимость разработки.</p><div class="direct-contact-actions"><a class="btn btn-primary" href="tel:+79264263366">Позвонить →</a><a class="btn btn-secondary" href="mailto:asamadesign@proton.me">Написать на почту</a></div></div>
       </div>
 
     </div>
@@ -179,7 +138,5 @@
 </footer>
 
 <script src="js/main.js"></script>
-</body>
+<script src="js/site-upgrades.js"></script></body>
 </html>
-
-

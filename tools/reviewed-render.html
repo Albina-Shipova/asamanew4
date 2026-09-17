@@ -1,0 +1,15 @@
+<!doctype html><html><meta charset="utf-8"><title>Подготовка материалов портфолио</title>
+<style>html,body{margin:0;background:#080d15}canvas{display:block}#status{position:fixed;bottom:0;left:0;background:white;color:black;font:12px sans-serif}body.ready #status{display:none}</style>
+<script src="../cases/materials.js"></script><script src="../cases/contact-blur-map.js"></script><script src="../cases/masked-materials.js"></script><script src="reviewed-config.js"></script><body><div id="status">Загрузка</div><script>
+(async()=>{
+const q=new URLSearchParams(location.search),slug=q.get('slug'),key=q.get('frame'),project=PORTFOLIO_MATERIALS.find(p=>p.slug===slug);
+const load=src=>new Promise((resolve,reject)=>{const i=new Image();i.onload=()=>resolve(i);i.onerror=()=>reject(new Error(src));i.src=src;});
+const canv=(w,h)=>{const c=document.createElement('canvas');c.width=Math.round(w);c.height=Math.round(h);return c;};
+async function frame(f){const no=f.src.match(/orbit-(\d+)/)[1],replacement=REVIEWED_INSERTS[slug+'/'+no];const img=await load(replacement||'../cases/'+f.src);let w=img.naturalWidth,h=img.naturalHeight;if(replacement){w=1600;h=900;}const c=canv(w,h),x=c.getContext('2d');x.drawImage(img,0,0,w,h);
+for(const [a,b,d,e] of REVIEWED_REGIONS[slug]?.[no]||[]){const left=Math.floor(a*w/100),top=Math.floor(b*h/100),rw=Math.ceil(d*w/100),rh=Math.ceil(e*h/100);const tile=canv(rw,rh),t=tile.getContext('2d');t.drawImage(c,left,top,rw,rh,0,0,rw,rh);x.save();x.beginPath();x.rect(left,top,rw,rh);x.clip();x.filter=`blur(${Math.max(9,w*.009)}px)`;x.drawImage(tile,left-10,top-10,rw+20,rh+20);x.restore();}
+return c;}
+if(key){const f=project.frames.find(f=>f.src.includes('orbit-'+key));document.body.append(await frame(f));}
+else{const width=1000,height=project.frames.reduce((s,f)=>s+Math.round(f.height*width/1600),0),full=canv(width,height),ctx=full.getContext('2d');let y=0;for(const f of project.frames){const c=await frame(f),h=Math.round(f.height*width/1600);if(c.width===1600&&c.height===900){const scale=Math.min(1,900/f.height),cw=1600*scale,ch=f.height*scale;ctx.drawImage(c,(1600-cw)/2,(900-ch)/2,cw,ch,0,y,width,h);}else ctx.drawImage(c,0,y,width,h);y+=h;}document.body.append(full);}
+document.documentElement.style.width=document.querySelector('canvas').width+'px';document.body.classList.add('ready');
+})().catch(e=>{document.getElementById('status').textContent=e.message;});
+</script></body></html>

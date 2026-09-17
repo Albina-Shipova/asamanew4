@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">ЗдорЗуб</title>
+  <defs><linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#3aa7b8"/><stop offset="1" stop-color="#2f6bff"/></linearGradient></defs>
+  <path d="M19 11c5-3 9 1 13 1s8-4 13-1c8 5 5 16 2 23-3 8-4 19-10 19-4 0-2-13-5-13s-1 13-5 13c-6 0-7-11-10-19-3-7-6-18 2-23Z" fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m48 7 1.7 4.3L54 13l-4.3 1.7L48 19l-1.7-4.3L42 13l4.3-1.7L48 7Z" fill="#2f6bff" transform="rotate(28 48 13)"/>
+</svg>
