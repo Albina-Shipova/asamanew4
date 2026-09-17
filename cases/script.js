@@ -1,5 +1,5 @@
 const requestedProject = new URLSearchParams(location.search).get('project');
-const HIDDEN_PROJECT_SLUGS=new Set(['stroyservis39','gracekelly','bmstair']);
+const HIDDEN_PROJECT_SLUGS=new Set(['stroyservis39','gracekelly','bmstair','zdorzub']);
 const P=(window.PORTFOLIO_MATERIALS||[]).filter(project=>!HIDDEN_PROJECT_SLUGS.has(project.slug)||project.slug===requestedProject),$=s=>document.querySelector(s),scene=$('#scene'),carousel=$('#carousel'),orbit=$('#orbit'),N=P.length,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let paused=reduced,lessMotion=false,hover=false,focused=false,current=Math.max(0,P.findIndex(project=>project.slug===requestedProject)),pos=current,target=null,hold=0,last=performance.now(),selectedAt=last,fi=0,hoveredFrame=null,inspectorIndex=0,drag=null,suppress=false,offset=0,back=false,bottom=0;
 try{lessMotion=localStorage.getItem('asama-less-motion')==='true'}catch(error){}
