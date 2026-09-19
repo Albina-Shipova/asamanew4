@@ -239,7 +239,7 @@ window.PORTFOLIO_MATERIALS=[
       },
       {
         "src": "materials/behome/orbit-07.webp",
-        "label": "Выбери готовый проект— сэкономь до 50 000 ₽",
+        "label": "Выберите готовый проект дома",
         "y": 5798,
         "height": 790
       },
@@ -761,7 +761,7 @@ window.PORTFOLIO_MATERIALS=[
       },
       {
         "src": "materials/remontsurgut/orbit-09-new.webp",
-        "label": "Люди, отвечающиеза результатвашего объекта",
+        "label": "Люди, отвечающие за результат вашего объекта",
         "y": 8241,
         "height": 987
       },
@@ -881,7 +881,7 @@ window.PORTFOLIO_MATERIALS=[
       },
       {
         "src": "materials/spasibodoctor/orbit-02.webp",
-        "label": "Повторная консультация врача — 560 ₽",
+        "label": "Повторная консультация врача",
         "y": 876,
         "height": 466
       },

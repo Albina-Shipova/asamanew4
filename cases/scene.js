@@ -164,7 +164,10 @@ function advancePreview(dt,index=current){
  }
  img.style.transform=`translateY(-${state.offset}px)`;
 }
+let sceneFrame=0;
 function tick(now){
+ sceneFrame=0;
+ if(document.hidden)return;
  const dt=Math.min((now-last)/1000,.05);last=now;
  const visible=!document.hidden&&!orbit.open,automatic=visible&&!paused&&!reduced;
  if(visible){
@@ -180,6 +183,10 @@ function tick(now){
    renderer.render(world,camera);lastAmbientFrame=now;ambientDirty=false;
   }
  }
- requestAnimationFrame(tick);
+ sceneFrame=requestAnimationFrame(tick);
 }
-requestAnimationFrame(tick);
+sceneFrame=requestAnimationFrame(tick);
+document.addEventListener('visibilitychange',()=>{
+ if(document.hidden){cancelAnimationFrame(sceneFrame);sceneFrame=0;}
+ else if(!sceneFrame){last=performance.now();ambientDirty=true;sceneFrame=requestAnimationFrame(tick);}
+});

@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /tools/
+Disallow: /cases/sites/
 
 Sitemap: https://asama.site/sitemap.xml

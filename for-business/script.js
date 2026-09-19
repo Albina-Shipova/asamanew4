@@ -318,7 +318,8 @@ function showBusiness(scroll=false){
  const c=businessCases[key];
  document.getElementById('example-caption').textContent='Пример из нашего портфолио. Структуру и функции вашего сайта подберём после обсуждения задачи.';
  document.getElementById('example-link').href='../cases/index.html?project='+c[0];
- document.getElementById('example-image').src='../cases/materials/'+c[0]+'/cover.webp';
+ const originalCover = ['touch', 'socvetie', 'krasivaya'].includes(c[0]);
+ document.getElementById('example-image').src='../cases/'+(originalCover?'materials/':'materials-reviewed/')+c[0]+'/cover.webp';
  document.getElementById('example-image').alt='Главная страница проекта «'+c[1]+'»';
  document.getElementById('example-name').textContent=c[1];document.getElementById('example-category').textContent=c[2];
  if(scroll){document.getElementById('story-title').focus({preventScroll:true});document.getElementById('story').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
