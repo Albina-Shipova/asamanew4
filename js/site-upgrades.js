@@ -22,8 +22,11 @@ const sectionLinks=menuLinks.map(link=>{const url=new URL(link.href,location.hre
 const sections=sectionLinks.map(({link,id})=>({link,section:document.getElementById(id)})).filter(item=>item.section);
 const setActive=(active)=>menuLinks.forEach(link=>{const isActive=link===active;link.classList.toggle('is-active',isActive);if(isActive)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');});
 if(sections.length){
-  const spy=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)setActive(sections.find(item=>item.section===entry.target)?.link);}),{rootMargin:'-22% 0px -62% 0px',threshold:0});
-  sections.forEach(item=>spy.observe(item.section));
+  let ticking=false;
+  const updateActive=()=>{ticking=false;const header=document.querySelector('.site-header');const line=(header?.getBoundingClientRect().bottom||0)+24;const visible=sections.filter(item=>{const box=item.section.getBoundingClientRect();return box.top<=line&&box.bottom>line;});if(visible.length)setActive(visible[visible.length-1].link);};
+  window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(updateActive)}},{passive:true});
+  window.addEventListener('resize',updateActive,{passive:true});
+  updateActive();
   sectionLinks.forEach(({link})=>link.addEventListener('click',()=>setActive(link)));
 }
 // Быстрый буквенный прелоадер: не блокирует страницу и исчезает после первого кадра.
