@@ -16,6 +16,9 @@
 @media(max-width:760px){:is(.home-page,.business-page) .final-cta .cta-intro h2{font-size:clamp(30px,7.8vw,48px)}}
 .business-doubts li::after{background:linear-gradient(90deg,transparent 55%,#252c24 78%,#89927d 100%)}
 /* Буквенный прелоадер ASAMA */
+.nav-links a.is-active{color:var(--c-lime,#c6ff32);background-size:100% 1px}
+.nav-links a.is-active::after{content:'';position:absolute;left:50%;bottom:-7px;width:4px;height:4px;border-radius:50%;background:var(--c-lime,#c6ff32);transform:translateX(-50%)}
+@media(max-width:1100px){.nav-links a.is-active::after{display:none}}
 .asama-preloader{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:#070a08;color:#f3f5ef;transition:opacity .55s ease,visibility .55s ease}
 .asama-preloader__word{display:flex;gap:.08em;font:600 clamp(2rem,5vw,4rem)/1 var(--font-sans,Arial,sans-serif);letter-spacing:.18em;overflow:hidden}
 .asama-preloader__word span{display:inline-block;opacity:0;transform:translateY(105%);animation:asama-letter-in .42s cubic-bezier(.22,.8,.3,1) forwards;animation-delay:calc(var(--i)*.075s)}

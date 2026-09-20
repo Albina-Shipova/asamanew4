@@ -1,6 +1,16 @@
 (() => {
 'use strict';
 const reduce=matchMedia('(prefers-reduced-motion: reduce)');
+// Подсветка пункта меню по текущему разделу страницы.
+const menuLinks=[...document.querySelectorAll('.nav-links a')];
+const sectionLinks=menuLinks.map(link=>({link,url:new URL(link.href,location.href)})).filter(({url})=>url.pathname===location.pathname&&url.hash);
+const sections=sectionLinks.map(({link,url})=>({link,section:document.getElementById(url.hash.slice(1))})).filter(item=>item.section);
+const setActive=(active)=>menuLinks.forEach(link=>{const isActive=link===active;link.classList.toggle('is-active',isActive);if(isActive)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');});
+if(sections.length){
+  const spy=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)setActive(sections.find(item=>item.section===entry.target)?.link);}),{rootMargin:'-22% 0px -62% 0px',threshold:0});
+  sections.forEach(item=>spy.observe(item.section));
+  sectionLinks.forEach(({link})=>link.addEventListener('click',()=>setActive(link)));
+}
 // Быстрый буквенный прелоадер: не блокирует страницу и исчезает после первого кадра.
 const loader=document.createElement('div');
 loader.className='asama-preloader';
