@@ -16,11 +16,12 @@
 @media(max-width:760px){:is(.home-page,.business-page) .final-cta .cta-intro h2{font-size:clamp(30px,7.8vw,48px)}}
 .business-doubts li::after{background:linear-gradient(90deg,transparent 55%,#252c24 78%,#89927d 100%)}
 /* Буквенный прелоадер ASAMA */
-.nav-phone{position:relative;color:var(--c-ink-100,#f1f3ed);font-size:.9rem;font-weight:500;white-space:nowrap;transition:color .25s}
+.nav-phone{position:relative;color:var(--c-ink-100,#f1f3ed);font-size:.86rem;font-weight:500;white-space:nowrap;transition:color .25s}
 .nav-phone::after{content:'';position:absolute;left:0;right:0;bottom:-5px;height:1px;background:var(--c-lime,#c6ff32);transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.19,1,.22,1)}
 .nav-phone:hover,.nav-phone:focus-visible{color:var(--c-lime,#c6ff32)}
 .nav-phone:hover::after,.nav-phone:focus-visible::after{transform:scaleX(1)}
 @media(max-width:1280px){.nav-phone{display:none}}
+@media(min-width:1281px){.site-header .container{max-width:1800px}.site-header .nav-links{gap:clamp(16px,1.25vw,26px);flex-wrap:nowrap}.site-header .nav-links a{font-size:clamp(.78rem,.76vw,.92rem);white-space:nowrap}.site-header .nav-cta{gap:clamp(14px,1.1vw,22px);flex-shrink:0}.site-header .nav-left{min-width:0;gap:clamp(28px,3vw,56px)}}
 .strip-letter{display:inline-block;animation:strip-letter-pulse calc(var(--letter-count)*.13s + .75s) ease-in-out infinite;animation-delay:calc(var(--letter-index)*.13s)}
 footer .logo .strip-letter{animation-duration:1.4s;animation-delay:calc(var(--letter-index)*.16s)}
 @keyframes strip-letter-pulse{0%,72%,100%{color:inherit}82%{color:var(--c-lime,#c6ff32);text-shadow:0 0 14px rgba(198,255,50,.35)}}
