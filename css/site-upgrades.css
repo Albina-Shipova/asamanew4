@@ -17,6 +17,7 @@
 .business-doubts li::after{background:linear-gradient(90deg,transparent 55%,#252c24 78%,#89927d 100%)}
 /* Буквенный прелоадер ASAMA */
 .strip-letter{display:inline-block;animation:strip-letter-pulse calc(var(--letter-count)*.13s + .75s) ease-in-out infinite;animation-delay:calc(var(--letter-index)*.13s)}
+footer .logo .strip-letter{animation-duration:1.4s;animation-delay:calc(var(--letter-index)*.16s)}
 @keyframes strip-letter-pulse{0%,72%,100%{color:inherit}82%{color:var(--c-lime,#c6ff32);text-shadow:0 0 14px rgba(198,255,50,.35)}}
 @media (prefers-reduced-motion:reduce){.strip-letter{animation:none}}
 .home-page .strip-points li{position:relative;isolation:isolate;overflow:hidden;transition:transform .38s cubic-bezier(.19,1,.22,1),border-color .3s,background-color .3s,box-shadow .38s}

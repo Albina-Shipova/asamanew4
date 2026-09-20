@@ -2,7 +2,7 @@
 'use strict';
 const reduce=matchMedia('(prefers-reduced-motion: reduce)');
 // Последовательный лаймовый акцент букв в трёх пунктах подхода.
-document.querySelectorAll('.strip-points li h4').forEach(title=>{
+document.querySelectorAll('.strip-points li h4, footer .logo').forEach(title=>{
   const text=title.textContent;
   title.setAttribute('aria-label',text);
   title.textContent='';
