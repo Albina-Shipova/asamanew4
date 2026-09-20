@@ -16,8 +16,9 @@ document.querySelectorAll('.strip-points li h4, footer .logo, .site-header .logo
 });
 // Подсветка пункта меню по текущему разделу страницы.
 const menuLinks=[...document.querySelectorAll('.nav-links a')];
-const sectionLinks=menuLinks.map(link=>({link,url:new URL(link.href,location.href)})).filter(({url})=>url.pathname===location.pathname&&url.hash);
-const sections=sectionLinks.map(({link,url})=>({link,section:document.getElementById(url.hash.slice(1))})).filter(item=>item.section);
+const homepageSectionByPath={'/cases/index.html':'cases','/for-business/index.html':'for-business','/contact.html':'contact'};
+const sectionLinks=menuLinks.map(link=>{const url=new URL(link.href,location.href);const id=url.pathname===location.pathname&&url.hash?url.hash.slice(1):homepageSectionByPath[url.pathname];return{link,id};}).filter(({id})=>id);
+const sections=sectionLinks.map(({link,id})=>({link,section:document.getElementById(id)})).filter(item=>item.section);
 const setActive=(active)=>menuLinks.forEach(link=>{const isActive=link===active;link.classList.toggle('is-active',isActive);if(isActive)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');});
 if(sections.length){
   const spy=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)setActive(sections.find(item=>item.section===entry.target)?.link);}),{rootMargin:'-22% 0px -62% 0px',threshold:0});
