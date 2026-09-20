@@ -16,6 +16,11 @@
 @media(max-width:760px){:is(.home-page,.business-page) .final-cta .cta-intro h2{font-size:clamp(30px,7.8vw,48px)}}
 .business-doubts li::after{background:linear-gradient(90deg,transparent 55%,#252c24 78%,#89927d 100%)}
 /* Буквенный прелоадер ASAMA */
+.home-page .strip-points li{position:relative;isolation:isolate;overflow:hidden;transition:transform .38s cubic-bezier(.19,1,.22,1),border-color .3s,background-color .3s,box-shadow .38s}
+.home-page .strip-points li::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 0 0,rgba(198,255,50,.13),transparent 62%);opacity:0;transform:translateX(-18%);transition:opacity .38s,transform .5s cubic-bezier(.19,1,.22,1)}
+.home-page .strip-points li h4,.home-page .strip-points li p{position:relative;transition:transform .38s cubic-bezier(.19,1,.22,1),color .3s}
+@media (hover:hover){.home-page .strip-points li:hover{transform:translateY(-7px);border-left-color:var(--c-lime,#c6ff32);background:rgba(198,255,50,.035);box-shadow:0 14px 30px rgba(0,0,0,.2)}.home-page .strip-points li:hover::after{opacity:1;transform:translateX(0)}.home-page .strip-points li:hover h4{transform:translateX(6px);color:var(--c-lime,#c6ff32)}.home-page .strip-points li:hover p{transform:translateX(6px)}}
+@media (prefers-reduced-motion:reduce){.home-page .strip-points li,.home-page .strip-points li::after,.home-page .strip-points li h4,.home-page .strip-points li p{transition:none}.home-page .strip-points li:hover{transform:none}}
 .nav-links a.is-active{color:var(--c-lime,#c6ff32);background-size:100% 1px}
 .nav-links a.is-active::after{content:'';position:absolute;left:50%;bottom:-7px;width:4px;height:4px;border-radius:50%;background:var(--c-lime,#c6ff32);transform:translateX(-50%)}
 @media(max-width:1100px){.nav-links a.is-active::after{display:none}}
