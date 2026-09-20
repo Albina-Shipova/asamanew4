@@ -16,6 +16,7 @@
 @media(max-width:760px){:is(.home-page,.business-page) .final-cta .cta-intro h2{font-size:clamp(30px,7.8vw,48px)}}
 .business-doubts li::after{background:linear-gradient(90deg,transparent 55%,#252c24 78%,#89927d 100%)}
 /* Буквенный прелоадер ASAMA */
+.social-contact-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:1.25rem}.social-contact{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border:1px solid var(--c-ink-600);border-radius:999px;font-size:.9rem;transition:background-color .25s,border-color .25s,transform .25s}.social-contact svg{width:18px;height:18px;fill:currentColor}.social-contact-telegram{color:#229ed9}.social-contact-whatsapp{color:#25d366}.social-contact:hover,.social-contact:focus-visible{transform:translateY(-2px);border-color:currentColor;background:color-mix(in srgb,currentColor 10%,transparent)}.footer-social-link{font-size:.9rem}.footer-telegram{color:#229ed9!important}.footer-whatsapp{color:#25d366!important}
 .nav-phone{position:relative;color:var(--c-ink-100,#f1f3ed);font-size:.86rem;font-weight:500;white-space:nowrap;transition:color .25s}
 .nav-phone::after{content:'';position:absolute;left:0;right:0;bottom:-5px;height:1px;background:var(--c-lime,#c6ff32);transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.19,1,.22,1)}
 .nav-phone:hover,.nav-phone:focus-visible{color:var(--c-lime,#c6ff32)}
