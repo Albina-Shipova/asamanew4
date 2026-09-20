@@ -39,7 +39,7 @@ const flowSlots={
  '-3':{x:-.47,y:-.34,z:-560,scale:.70,angle:76,tilt:-10,opacity:.62},
  '-2':{x:-.79,y:-.18,z:-880,scale:.50,angle:88,tilt:-16,opacity:.46},
  '-1':{x:-.61,y:.17,z:-650,scale:.76,angle:64,tilt:29,opacity:.64},
- '0':{x:0,y:.055,z:0,scale:1.045,angle:0,tilt:0,opacity:1},
+ '0':{x:0,y:.055,z:0,scale:1,angle:0,tilt:0,opacity:1},
  '1':{"x":0.44111,"y":0.18732,"z":-480,"scale":0.65196,"angle":-152,"tilt":16.93,"opacity":0.72},
  '2':{"x":0.50841,"y":-0.08202,"z":-650,"scale":0.64537,"angle":-145,"tilt":-27.272,"opacity":0.52},
  '3':{x:.12,y:-.48,z:-1200,scale:.30,angle:0,tilt:0,opacity:0}
@@ -48,7 +48,7 @@ const mobileFlowSlots={
  '-3':{x:-.06,y:-.72,z:-1250,scale:.28,angle:86,tilt:-8,opacity:0},
  '-2':{x:-.12,y:-.54,z:-900,scale:.57,angle:70,tilt:-13,opacity:.24},
  '-1':{x:-.34,y:-.25,z:-430,scale:.68,angle:70,tilt:-18,opacity:.64},
- '0':{x:0,y:.035,z:0,scale:1.06,angle:0,tilt:0,opacity:1},
+ '0':{x:0,y:.035,z:0,scale:1,angle:0,tilt:0,opacity:1},
  '1':{x:.38,y:.32,z:-500,scale:.64,angle:-64,tilt:-17,opacity:.58},
  '2':{x:.16,y:.57,z:-920,scale:.54,angle:-68,tilt:-12,opacity:.18},
  '3':{x:.04,y:.75,z:-1300,scale:.26,angle:-88,tilt:0,opacity:0}
@@ -71,6 +71,9 @@ function render(){
   if(visible)hydrateCard(i,i===current||previewStates[i].started);
   else if(Math.abs(d)>4){releaseImage(c.querySelector('.full'));previewStates[i].started=false;}
   c.style.transform=`translate(-50%,-50%) translate3d(${f.x}px,${f.y}px,${f.z}px) rotateY(${f.angle}deg) rotateZ(${f.tilt}deg) scale(${f.scale})`;
+  const settled=Math.abs(d)<.001;
+  c.classList.toggle('is-settled',settled);
+  if(settled)c.style.transform=`translate(${Math.round(-c.offsetWidth/2+f.x)}px,${Math.round(-c.offsetHeight/2+f.y)}px)`;
   c.style.opacity=visible?f.opacity:0;
   c.style.visibility=visible?'visible':'hidden';
   c.style.zIndex=100-Math.round(Math.abs(d)*12);

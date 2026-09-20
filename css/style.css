@@ -2216,10 +2216,14 @@ body.bg-ready {
 }
 .site-footer .container { max-width:1480px; }
 /* Reviews carousel */
-.reviews-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:clamp(1.5rem,2.6vw,2.75rem);padding-right:8vw;scrollbar-width:none}
+.reviews-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:clamp(1.5rem,2.6vw,2.75rem);padding-right:0;scrollbar-width:none}
 .reviews-row::-webkit-scrollbar{display:none}.reviews-row .review-card{flex:0 0 calc((100% - 2 * clamp(1.5rem,2.6vw,2.75rem))/3);scroll-snap-align:start}
 @media(max-width:760px){.reviews-row .review-card{flex-basis:86vw}}
-.reviews-section{position:relative}.reviews-section:after{content:'←  →';position:absolute;right:4vw;top:5.5rem;font-size:1.5rem;letter-spacing:1rem;color:var(--c-lime);pointer-events:none}
+.reviews-section{position:relative}.reviews-section:after{content:none}
+.reviews-controls{display:flex;justify-content:flex-end;gap:12px;margin:0 0 24px}
+.reviews-controls button{width:48px;height:48px;border:1px solid #64704e;border-radius:50%;background:transparent;color:var(--c-lime);font-size:24px;cursor:pointer}
+.reviews-controls button:disabled{opacity:.3;cursor:default}
+.reviews-controls button:focus-visible{outline:2px solid var(--c-lime);outline-offset:4px}
 /* Review cards share one visual scale and quieter client labels. */
 .reviews-row .review-card blockquote{min-height:15rem;display:flex;flex-direction:column;justify-content:flex-start}
 .reviews-row .review-card blockquote p{margin:0}

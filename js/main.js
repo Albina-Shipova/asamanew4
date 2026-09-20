@@ -291,4 +291,16 @@ if (fixedHeader) {
   updateProgress();
 }
 const reviewsRow=document.querySelector('.reviews-row');
-if(reviewsRow){reviewsRow.addEventListener('wheel',e=>{if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){e.preventDefault();reviewsRow.scrollBy({left:e.deltaY,behavior:'smooth'});}},{passive:false});}
+if(reviewsRow){
+  reviewsRow.id='reviews-track';
+  const controls=document.createElement('div');
+  controls.className='reviews-controls';
+  controls.innerHTML='<button type="button" aria-label="Предыдущие отзывы" aria-controls="reviews-track">←</button><button type="button" aria-label="Следующие отзывы" aria-controls="reviews-track">→</button>';
+  document.querySelector('.reviews-title').after(controls);
+  const [prev,next]=controls.children;
+  const sync=()=>{prev.disabled=reviewsRow.scrollLeft<=2;next.disabled=reviewsRow.scrollLeft>=reviewsRow.scrollWidth-reviewsRow.clientWidth-2;};
+  const move=direction=>reviewsRow.scrollBy({left:direction*(reviewsRow.querySelector('.review-card').getBoundingClientRect().width+parseFloat(getComputedStyle(reviewsRow).gap)),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+  prev.onclick=()=>move(-1);next.onclick=()=>move(1);
+  reviewsRow.addEventListener('scroll',sync,{passive:true});
+  new ResizeObserver(sync).observe(reviewsRow);sync();
+}
