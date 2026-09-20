@@ -1,6 +1,20 @@
 (() => {
 'use strict';
 const reduce=matchMedia('(prefers-reduced-motion: reduce)');
+// Последовательный лаймовый акцент букв в трёх пунктах подхода.
+document.querySelectorAll('.strip-points li h4').forEach(title=>{
+  const text=title.textContent;
+  title.setAttribute('aria-label',text);
+  title.textContent='';
+  [...text].forEach((char,index)=>{
+    const span=document.createElement('span');
+    span.className='strip-letter';
+    span.textContent=char===' '? '\u00a0':char;
+    span.style.setProperty('--letter-index',index);
+    span.style.setProperty('--letter-count',text.length);
+    title.append(span);
+  });
+});
 // Подсветка пункта меню по текущему разделу страницы.
 const menuLinks=[...document.querySelectorAll('.nav-links a')];
 const sectionLinks=menuLinks.map(link=>({link,url:new URL(link.href,location.href)})).filter(({url})=>url.pathname===location.pathname&&url.hash);
