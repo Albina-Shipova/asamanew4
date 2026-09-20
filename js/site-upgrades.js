@@ -9,13 +9,13 @@ row.addEventListener('pointerenter',()=>row.classList.add('coin-departed'),{once
 });
 document.querySelectorAll('.formats-every-project > div:not(.formats-every-intro)').forEach(el=>el.tabIndex=0);
 document.querySelectorAll('.business-choice-grid,.business-sector-grid').forEach(grid=>{
-const items=[...grid.children];let order=[],index=0,timer=0,inside=false,visible=false,interval=1100,lastX=0,lastY=0,lastAt=0;
+const items=[...grid.children];let order=[],index=0,timer=0,inside=false,visible=false,interval=550,lastX=0,lastY=0,lastAt=0;
 function layout(){const rows=[];for(const el of items){let row=rows.find(r=>Math.abs(r[0].offsetTop-el.offsetTop)<4);if(!row)rows.push(row=[]);row.push(el);}order=rows.flatMap((r,i)=>i%2?r.slice().reverse():r);index=0;}
 function stop(){clearTimeout(timer);items.forEach(el=>el.classList.remove('roulette-active'));}
 function step(){stop();if(!visible||inside||document.hidden||reduce.matches)return;order[index%order.length]?.classList.add('roulette-active');index++;timer=setTimeout(step,interval);}
 grid.addEventListener('pointerenter',()=>{inside=true;stop();});grid.addEventListener('pointerleave',()=>{inside=false;step();});
 grid.addEventListener('focusin',()=>{inside=true;stop();});grid.addEventListener('focusout',()=>{inside=false;step();});
-window.addEventListener('pointermove',e=>{if(!visible)return;const now=performance.now();if(now-lastAt<90)return;const speed=Math.hypot(e.clientX-lastX,e.clientY-lastY)/Math.max(90,now-lastAt);interval=interval*.8+Math.max(650,1400-speed*250)*.2;lastAt=now;lastX=e.clientX;lastY=e.clientY;},{passive:true});
+window.addEventListener('pointermove',e=>{if(!visible)return;const now=performance.now();if(now-lastAt<90)return;const speed=Math.hypot(e.clientX-lastX,e.clientY-lastY)/Math.max(90,now-lastAt);interval=interval*.8+Math.max(325,700-speed*125)*.2;lastAt=now;lastX=e.clientX;lastY=e.clientY;},{passive:true});
 new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;visible?step():stop();},{threshold:.1}).observe(grid);
 new ResizeObserver(layout).observe(grid);document.addEventListener('visibilitychange',step);reduce.addEventListener('change',step);layout();
 });

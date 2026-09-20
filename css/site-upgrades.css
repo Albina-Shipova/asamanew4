@@ -14,3 +14,4 @@
 :is(.home-page,.business-page) .final-cta .cta-intro .eyebrow{margin-bottom:28px}
 :is(.home-page,.business-page) .final-cta .cta-form{padding-block:clamp(40px,5vw,72px);border-radius:0;align-content:center}
 @media(max-width:760px){:is(.home-page,.business-page) .final-cta .cta-intro h2{font-size:clamp(30px,7.8vw,48px)}}
+.business-doubts li::after{background:linear-gradient(90deg,transparent 55%,#252c24 78%,#89927d 100%)}

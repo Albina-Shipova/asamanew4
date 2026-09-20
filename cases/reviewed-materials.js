@@ -799,8 +799,8 @@ const reviewed = {
       {
         "src": "materials-reviewed/zdorzub/orbit-09.webp",
         "label": "Сайт стоматологии — раздел 9",
-        "y": 8000,
-        "height": 291
+        "y": 7291,
+        "height": 1000
       }
     ],
     "cover": "materials-reviewed/zdorzub/cover.webp",

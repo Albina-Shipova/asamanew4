@@ -64,9 +64,9 @@ async function main() {
     const { width, height } = await sharp(screenshot).metadata();
     const frames = [];
     for (let y = 0, i = 1; y < height; y += 1000, i++) {
-      const h = Math.min(1000, height-y), src = `materials-reviewed/zdorzub/orbit-${String(i).padStart(2,'0')}.webp`;
-      await write('cases/' + src, await sharp(screenshot).extract({ left: 0, top: y, width, height: h }).webp({ quality: 90 }).toBuffer());
-      frames.push({ src, label: `Сайт стоматологии — раздел ${i}`, y, height: h });
+      const h = Math.min(1000, height), captureY = Math.min(y, height-h), src = `materials-reviewed/zdorzub/orbit-${String(i).padStart(2,'0')}.webp`;
+      await write('cases/' + src, await sharp(screenshot).extract({ left: 0, top: captureY, width, height: h }).webp({ quality: 90 }).toBuffer());
+      frames.push({ src, label: `Сайт стоматологии — раздел ${i}`, y: captureY, height: h });
     }
     for (const [name, w, h] of [['full', 1000, null], ['cover', 1600, 900], ['thumb', 640, 360]]) {
       let img = sharp(screenshot);
