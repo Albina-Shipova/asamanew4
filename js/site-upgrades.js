@@ -6,13 +6,12 @@ document.querySelectorAll('.strip-points li h4, footer .logo, .site-header .logo
   const text=title.textContent;
   title.setAttribute('aria-label',text);
   title.textContent='';
-  [...text].forEach((char,index)=>{
-    const span=document.createElement('span');
-    span.className='strip-letter';
-    span.textContent=char===' '? '\u00a0':char;
-    span.style.setProperty('--letter-index',index);
-    span.style.setProperty('--letter-count',text.length);
-    title.append(span);
+  const words=text.split(/(\s+)/); let index=0;
+  words.forEach(word=>{
+    if(/^\s+$/.test(word)){title.append(document.createTextNode(' '));return;}
+    const wordWrap=document.createElement('span'); wordWrap.className='strip-word';
+    [...word].forEach(char=>{const span=document.createElement('span');span.className='strip-letter';span.textContent=char;span.style.setProperty('--letter-index',index++);span.style.setProperty('--letter-count',text.length);wordWrap.append(span);});
+    title.append(wordWrap);
   });
 });
 // Подсветка пункта меню по текущему разделу страницы.
