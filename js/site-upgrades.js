@@ -32,10 +32,10 @@ loader.innerHTML='<div class="asama-preloader__word">'+[...'ASAMA'].map((letter,
 document.body.prepend(loader);
 const dismissLoader=()=>{ loader.classList.add('is-done'); setTimeout(()=>loader.remove(),700); };
 if(reduce.matches) dismissLoader(); else window.addEventListener('load',()=>setTimeout(dismissLoader,720),{once:true});
-const icons=['<path d="M8 29V7h9a7 7 0 0 1 0 14H5m0 5h16M30 8a4 4 0 0 1 8 0c0 4-4 3-4 7m0 5v1"/>','<path d="m3 17 7-10 7 3 7-3 11 10-10 14-8-2-8-8m8-11-5 6 4 3 6-5 10 10M3 17l6 4m21-5 5 1M36 3a3 3 0 0 1 6 0c0 3-3 2-3 5m0 4v1"/>','<path d="m6 29 3-10L27 1l8 8-18 18-11 2Zm3-10 8 8M23 5l8 8M4 35h27M35 20a4 4 0 0 1 8 0c0 4-4 3-4 7m0 5v1"/>'];
+const icons=['<path d="M8 29V7h9a7 7 0 0 1 0 14H5m0 5h16"/>','<path d="m3 17 7-10 7 3 7-3 11 10-10 14-8-2-8-8m8-11-5 6 4 3 6-5 10 10M3 17l6 4m21-5 5 1"/>','<path d="m6 29 3-10L27 1l8 8-18 18-11 2Zm3-10 8 8M23 5l8 8M4 35h27"/>'];
 document.querySelectorAll('.business-doubts li').forEach((row,i)=>{
 row.tabIndex=0;
-row.insertAdjacentHTML('beforeend','<span class="doubt-graphic" aria-hidden="true"><svg viewBox="0 0 48 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+icons[i]+'</svg></span><span class="loss-coin" aria-hidden="true">₽</span>');
+row.insertAdjacentHTML('beforeend','<span class="doubt-graphic" aria-hidden="true"><svg viewBox="0 0 48 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+icons[i]+'</svg><span class="doubt-question">?</span></span><span class="loss-coin" aria-hidden="true">₽</span>');
 row.addEventListener('pointerenter',()=>row.classList.add('coin-departed'),{once:true});
 });
 document.querySelectorAll('.formats-every-project > div:not(.formats-every-intro)').forEach(el=>el.tabIndex=0);
