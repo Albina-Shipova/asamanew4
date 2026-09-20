@@ -21,9 +21,9 @@
 @media(max-width:1100px){.nav-links a.is-active::after{display:none}}
 .asama-preloader{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:#070a08;color:#f3f5ef;transition:opacity .55s ease,visibility .55s ease}
 .asama-preloader__word{display:flex;gap:.08em;font:600 clamp(2rem,5vw,4rem)/1 var(--font-sans,Arial,sans-serif);letter-spacing:.18em;overflow:hidden}
-.asama-preloader__word span{display:inline-block;opacity:0;transform:translateY(105%);animation:asama-letter-in .42s cubic-bezier(.22,.8,.3,1) forwards;animation-delay:calc(var(--i)*.075s)}
+.asama-preloader__word span{display:inline-block;opacity:0;transform:translateY(105%);animation:asama-letter-in .62s cubic-bezier(.22,.8,.3,1) forwards;animation-delay:calc(var(--i)*.12s)}
 .asama-preloader__word span:last-child{color:var(--c-lime,#b7ff18)}
-.asama-preloader__line{position:absolute;bottom:12%;width:min(180px,32vw);height:2px;background:var(--c-lime,#b7ff18);transform-origin:left;animation:asama-line-in 1.05s ease forwards}
+.asama-preloader__line{position:absolute;bottom:12%;width:min(180px,32vw);height:2px;background:var(--c-lime,#b7ff18);transform-origin:left;animation:asama-line-in 1.35s ease forwards}
 .asama-preloader.is-done{opacity:0;visibility:hidden;pointer-events:none}
 @keyframes asama-letter-in{to{opacity:1;transform:translateY(0)}}
 @keyframes asama-line-in{from{transform:scaleX(0)}to{transform:scaleX(1)}}
