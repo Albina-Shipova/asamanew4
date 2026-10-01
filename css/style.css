@@ -1875,6 +1875,7 @@ body:not(.home-page) .page-hero { padding-top:calc(var(--header-h) + clamp(2.5re
    этой ширины меню уезжает в бургер, кнопка «Обсудить проект» остаётся. */
 @media (max-width:1090px) {
   .nav-links { display:none; }
+  .site-header .nav-toggle { display:grid; }
   .nav-links.is-open {
     display:flex;
     flex-direction:column;
