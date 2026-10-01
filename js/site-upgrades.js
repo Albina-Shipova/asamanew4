@@ -29,14 +29,23 @@ if(sections.length){
   updateActive();
   sectionLinks.forEach(({link})=>link.addEventListener('click',()=>setActive(link)));
 }
-// Быстрый буквенный прелоадер: не блокирует страницу и исчезает после первого кадра.
-const loader=document.createElement('div');
-loader.className='asama-preloader';
-loader.setAttribute('aria-hidden','true');
-loader.innerHTML='<div class="asama-preloader__word">'+[...'ASAMA'].map((letter,i)=>`<span style="--i:${i}">${letter}</span>`).join('')+'</div><div class="asama-preloader__line"></div>';
-document.body.prepend(loader);
-const dismissLoader=()=>{ loader.classList.add('is-done'); setTimeout(()=>loader.remove(),700); };
-if(reduce.matches) dismissLoader(); else window.addEventListener('load',()=>setTimeout(dismissLoader,720),{once:true});
+// Прелоадер показывается только один раз за сессию на главной и в портфолио.
+const pagePath=location.pathname.replace(/\\/g,'/').replace(/index\.html$/,'');
+const loaderPage=pagePath==='/'?'home':pagePath==='/cases/'?'portfolio':null;
+let showLoader=false;
+if(loaderPage){
+  const loaderKey=`asama-preloader-seen-${loaderPage}`;
+  try{showLoader=sessionStorage.getItem(loaderKey)!=='1';if(showLoader)sessionStorage.setItem(loaderKey,'1');}catch{showLoader=true;}
+}
+if(showLoader){
+  const loader=document.createElement('div');
+  loader.className='asama-preloader';
+  loader.setAttribute('aria-hidden','true');
+  loader.innerHTML='<div class="asama-preloader__word">'+[...'ASAMA'].map((letter,i)=>`<span style="--i:${i}">${letter}</span>`).join('')+'</div><div class="asama-preloader__line"></div>';
+  document.body.prepend(loader);
+  const dismissLoader=()=>{loader.classList.add('is-done');setTimeout(()=>loader.remove(),700);};
+  if(reduce.matches)dismissLoader();else window.addEventListener('load',()=>setTimeout(dismissLoader,720),{once:true});
+}
 const icons=['<path d="M8 29V7h9a7 7 0 0 1 0 14H5m0 5h16"/>','<path d="m3 17 7-10 7 3 7-3 11 10-10 14-8-2-8-8m8-11-5 6 4 3 6-5 10 10M3 17l6 4m21-5 5 1"/>','<path d="m6 29 3-10L27 1l8 8-18 18-11 2Zm3-10 8 8M23 5l8 8M4 35h27"/>'];
 document.querySelectorAll('.business-doubts li').forEach((row,i)=>{
 row.tabIndex=0;
