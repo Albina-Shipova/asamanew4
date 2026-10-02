@@ -26,6 +26,13 @@
 .doubt-graphic svg{position:absolute!important;left:0;top:8px;width:38px!important;height:32px!important}.doubt-question{position:absolute;right:0;top:8px;width:16px;height:22px;display:grid;place-items:center;font:500 22px/1 Arial,sans-serif;color:currentColor}
 @media(min-width:1281px){.site-header .container{max-width:1800px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center}.site-header .nav-left{display:contents}.site-header .logo{grid-column:1}.site-header .nav-links{grid-column:2;justify-content:center;gap:clamp(16px,1.25vw,26px);flex-wrap:nowrap}.site-header .nav-links a{font-size:clamp(.78rem,.76vw,.92rem);white-space:nowrap}.site-header .nav-cta{grid-column:3;gap:clamp(14px,1.1vw,22px);flex-shrink:0}}
 @media (max-width:1280px) and (min-width:1101px){.site-header .nav-links{gap:clamp(12px,1.15vw,20px)}.site-header .nav-links a{font-size:clamp(.76rem,.8vw,.88rem)}.site-header .nav-phone{display:none}}
+/* В диапазоне 1101–1280px навигация остаётся обычной: телефон уже скрыт,
+   поэтому освобождённого места достаточно для пунктов меню. */
+@media (max-width:1280px) and (min-width:1101px){
+  .site-header .nav-links{display:flex}
+  .site-header .nav-toggle{display:none}
+  .site-header .nav-left{gap:clamp(1rem,3vw,2.25rem)}
+}
 @media (max-width:1100px) and (min-width:901px){.site-header .nav-links{display:flex;gap:clamp(9px,1vw,16px);flex-wrap:nowrap}.site-header .nav-links a{font-size:clamp(.68rem,.78vw,.8rem);white-space:nowrap}.site-header .nav-phone{display:none}.site-header .nav-toggle{display:none}}
 @media (max-width:900px){.site-header .nav-links{display:none}.site-header .nav-links.is-open{display:flex}.site-header .nav-phone{display:none}.site-header .nav-toggle{display:grid}.site-header .nav-cta .btn{display:none}}
 .strip-word{display:inline-block;white-space:nowrap}.strip-letter{display:inline-block;animation:strip-letter-pulse calc(var(--letter-count)*.13s + .75s) ease-in-out infinite;animation-delay:calc(var(--letter-index)*.13s)}
