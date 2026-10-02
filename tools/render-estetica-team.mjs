@@ -17,13 +17,13 @@ try{
  const send=(method,params={})=>new Promise((resolve,reject)=>{const n=++id;pending.set(n,{resolve,reject});ws.send(JSON.stringify({id:n,method,params}))});
  const ev=async expression=>{const r=await send('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value};
  await send('Page.enable');
- const jobs=[['tools/estetica-team.html',1600,900,'estetica/orbit-07-team.png'],['tools/estetica-full.html',1000,6256,'estetica/full-team.png']];
+ const jobs=[['tools/estetica-team.html',1600,900,'estetica/orbit-07-team.png'],['tools/estetica-full.html',1000,6256,'estetica/full-team.webp']];
  const context={window:{}};vm.runInNewContext(await readFile(path.join(root,'tools/staff-masks.js'),'utf8'),context);
  for(const [slug,frames] of Object.entries(context.window.STAFF_MASKS)){
   for(const frame of Object.keys(frames))jobs.push([`tools/staff-mask.html?slug=${slug}&frame=${frame}`,1600,900,`${slug}/orbit-${frame}-staff.png`]);
   jobs.push([`tools/staff-mask.html?slug=${slug}&frame=full`,1000,{spasibodoctor:5825,semdoc4:5923,remontsurgut:8007,behome:6630}[slug],`${slug}/full-staff.png`]);
  }
- jobs.push(['tools/behome-social.html',1600,900,'behome/orbit-11-social.png'],['tools/behome-social.html?full=1',1000,6630,'behome/full-social.png'],['tools/estetica-combined.html',1600,900,'estetica/orbit-02-03.png']);
+ jobs.push(['tools/behome-social.html',1600,900,'behome/orbit-11-social.png'],['tools/behome-social.html?full=1',1000,6630,'behome/full-social.webp'],['tools/estetica-combined.html',1600,900,'estetica/orbit-02-03.png']);
  if(process.argv.includes('--reviews')){
   jobs.length=0;
   const reviewContext={window:{}};vm.runInNewContext(await readFile(path.join(root,'tools/review-masks.js'),'utf8'),reviewContext);

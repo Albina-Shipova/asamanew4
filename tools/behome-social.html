@@ -1,4 +1,4 @@
-<!doctype html><html><meta charset="utf-8"><title>Будь Дома — контакты</title>
+<!doctype html><html><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><title>Будь Дома — контакты</title>
 <style>
 html,body{margin:0;overflow:hidden}.base{position:absolute;inset:0}.overlay{position:absolute;left:0;top:0;width:1600px;height:900px;transform-origin:0 0}
 .clean{position:absolute;background:#151619}.social{left:369px;top:344px;width:334px;height:57px;display:flex;align-items:center;padding-left:15px}
@@ -14,7 +14,7 @@ html,body{margin:0;overflow:hidden}.base{position:absolute;inset:0}.overlay{posi
 <script>
 const full=new URLSearchParams(location.search).has('full');
 const base=document.querySelector('#base'),overlay=document.querySelector('#overlay');
-base.src=full?'../cases/materials-blurred/behome/full-staff.png':'../cases/materials-blurred/behome/orbit-11.png';
+base.src=full?'../cases/materials-blurred/behome/full-staff.webp':'../cases/materials-blurred/behome/orbit-11.png';
 base.width=full?1000:1600;base.height=full?6630:900;
 for(const element of [document.documentElement,document.body]){element.style.width=base.width+'px';element.style.height=base.height+'px';element.style.position='relative'}
 if(full){overlay.style.left='-200px';overlay.style.top='5842.5px';overlay.style.transform='scale(.875)'}

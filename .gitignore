@@ -1,4 +1,21 @@
 .DS_Store
+Thumbs.db
+
+# dependencies and generated output
+node_modules/
+dist/
+build/
+.cache/
+.next/
+.vite/
+*.log
+.env
+.env.*
+
+# original editorial sources; optimized web assets are stored alongside them
+assets/editorial/source-files/
+assets/editorial/massage-room.png
+assets/editorial/medical-care.png
 
 # local QA and capture artifacts
 tools/.capture-raw/

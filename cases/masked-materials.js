@@ -3,15 +3,15 @@
 (() => {
   const masks = window.PORTFOLIO_CONTACT_BLUR || {};
   const staff = {
-    'behome/full.webp':'behome/full-social.png',
+    'behome/full.webp':'behome/full-social.webp',
     'behome/orbit-11.webp':'behome/orbit-11-social.png',
-    'behome/orbit-02.webp':'behome/orbit-02-staff.png',
-    'estetica/full.webp':'estetica/full-team.png',
+    'behome/orbit-02.webp':'behome/orbit-02-staff.webp',
+    'estetica/full.webp':'estetica/full-team.webp',
     'estetica/orbit-07.webp':'estetica/orbit-07-team.png',
     'spasibodoctor/full.webp':'spasibodoctor/full-staff.png',
     'semdoc4/full.webp':'semdoc4/full-staff.png',
     'remontsurgut/full.webp':'remontsurgut/full-staff.png',
-    'remontsurgut/orbit-09.webp':'remontsurgut/orbit-09-staff.png',
+    'remontsurgut/orbit-09.webp':'remontsurgut/orbit-09-staff.webp',
   };
   for (const [slug,frame] of Object.entries({estetica:'10',semdoc4:'07',remontsurgut:'10',tai2:'07'})) {
     staff[`${slug}/full.webp`]=`${slug}/full-reviews.png`;
@@ -35,3 +35,4 @@
     for (const frame of project.frames) frame.src = resolve(frame.src);
   }
 })();
+

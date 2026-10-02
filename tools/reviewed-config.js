@@ -13,8 +13,8 @@ window.REVIEWED_REGIONS={
  tai2:{'09':[[51,42,19,8]]}
 };
 window.REVIEWED_INSERTS={
- 'remontsurgut/01':'../assets/editorial/remprof-hero-reviewed.png',
- 'remontsurgut/09':'../assets/editorial/remprof-team-reviewed.png',
- 'tai2/04':'../assets/editorial/taishan-methods-reviewed.png',
+ 'remontsurgut/01':'../assets/editorial/remprof-hero-reviewed.webp',
+ 'remontsurgut/09':'../assets/editorial/remprof-team-reviewed.webp',
+ 'tai2/04':'../assets/editorial/taishan-methods-reviewed.webp',
  'tai2/08':'../cases/materials/tai2/orbit-08.webp'
 };
