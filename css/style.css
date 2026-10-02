@@ -445,6 +445,7 @@ section .container { position: relative; z-index: 1; }
 .icon-box.is-primary { color: var(--primary); }
 .icon-box.is-accent { color: var(--accent); }
 .contact-line .line-name { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.3rem; }
+.contact-line .line-role { font-size: 0.9rem; opacity: 0.7; margin: -0.15rem 0 0.35rem; }
 .contact-line a, .contact-line p { color: var(--muted); font-size: 1.05rem; line-height: 1.5; }
 .contact-line a:hover { color: var(--primary); }
 
