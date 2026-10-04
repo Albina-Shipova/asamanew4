@@ -317,7 +317,11 @@ function showBusiness(scroll=false){
  document.getElementById('journey').innerHTML=['Нашёл вас','Открыл сайт','Убедился в выборе',d.steps[0]].map((s,i)=>'<li><span>0'+(i+1)+'</span><h3>'+s+'</h3><p>'+['В картах, поиске или соцсетях.','Узнал об услуге и условиях.','Посмотрел специалистов, работы или ответы на вопросы.','Связался удобным способом.'][i]+'</p></li>').join('');
  const c=businessCases[key];
  document.getElementById('example-caption').textContent='Пример из нашего портфолио. Структуру и функции вашего сайта подберём после обсуждения задачи.';
- document.getElementById('example-link').href='../cases/index.html?project='+c[0];
+ document.getElementById('example-preview-link').href='../cases/index.html?project='+c[0];
+ const liveProject={touch:'https://ramprikosnovenie.ru/',socvetie:'https://будем.рф/',krasivaya:'https://красивая-ты.рф/',zdorzub:'https://zdorzyb.asama.site/'}[c[0]]||'';
+ const liveLink=document.getElementById('example-live-link');
+ liveLink.hidden=!liveProject;
+ if(liveProject)liveLink.href=liveProject;
  const originalCover = ['touch', 'socvetie', 'krasivaya'].includes(c[0]);
  document.getElementById('example-image').src='../cases/'+(originalCover?'materials/':'materials-reviewed/')+c[0]+'/cover.webp';
  document.getElementById('example-image').alt='Главная страница проекта «'+c[1]+'»';

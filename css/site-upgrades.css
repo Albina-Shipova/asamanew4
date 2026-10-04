@@ -43,9 +43,11 @@
 .contact-page .direct-contact-card h3 { color:var(--c-ink-050); font-size:clamp(2rem,3.8vw,4rem); letter-spacing:-.055em; }
 .contact-page .direct-contact-card p { max-width:40rem; color:var(--c-ink-250); font-size:1rem; line-height:1.65; }
 .contact-page .direct-contact-actions { gap:12px; margin-top:.5rem; }
-.contact-page .direct-contact-actions .btn { min-height:54px; border-radius:0; }
+.contact-page .direct-contact-actions .btn { display:inline-flex; align-items:center; justify-content:center; min-width:210px; height:58px; padding:0 26px; border:1px solid var(--c-lime); border-radius:999px; font-family:var(--font-display); font-size:.86rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; transition:background-color .25s,border-color .25s,color .25s,transform .25s; }
+.contact-page .direct-contact-actions .btn:hover,.contact-page .direct-contact-actions .btn:focus-visible { transform:translateY(-2px); }
 .contact-page .direct-contact-actions .btn-primary { background:var(--c-lime); color:#111510; }
-.contact-page .direct-contact-actions .btn-secondary { border-color:var(--c-ink-400); color:var(--c-ink-050); }
+.contact-page .direct-contact-actions .btn-secondary { border-color:var(--c-lime); color:var(--c-ink-050); background:transparent; }
+.contact-page .direct-contact-actions .btn-secondary:hover,.contact-page .direct-contact-actions .btn-secondary:focus-visible { background:var(--c-lime); color:#111510; }
 .contact-page .contact-workflow-arrow { position:relative; height:58px; margin-top:-2px; }
 .contact-page .contact-workflow-arrow svg { display:block; width:120px; height:72px; margin:0 auto; overflow:visible; }
 .contact-page .contact-workflow-arrow path { fill:none; stroke:var(--c-lime); stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
@@ -73,6 +75,7 @@
 .contact-page .social-contact span { display:block !important; color:var(--c-lime) !important; line-height:1.2; }
 .contact-page .social-contact svg { display:block; fill:var(--c-lime) !important; color:var(--c-lime) !important; }
 .contact-page .social-contact-viber svg { border-width:2px; }
+:is(.home-page,.business-page) .final-cta h2 span:not(.rw):not(.rw-i) { color:var(--c-lime) !important; }
 @media(prefers-reduced-motion:reduce){.coin-departed .loss-coin,.client-route i{animation:none}.client-route i{display:none}.business-doubts li::after,.doubt-graphic,.format-feature-icon,.business-choice,.business-sector{transition:none}}
 .final-cta .cta-intro::after{content:none}
 :is(.home-page,.business-page) .final-cta .cta-intro{border:0;padding-block:clamp(40px,5vw,72px)}
