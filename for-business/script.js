@@ -326,6 +326,8 @@ function showBusiness(scroll=false){
  document.getElementById('example-image').src='../cases/'+(originalCover?'materials/':'materials-reviewed/')+c[0]+'/cover.webp';
  document.getElementById('example-image').alt='Главная страница проекта «'+c[1]+'»';
  document.getElementById('example-name').textContent=c[1];document.getElementById('example-category').textContent=c[2];
+ const secondary=document.getElementById('example-secondary');
+ secondary.hidden=key!=='build';
  if(scroll){document.getElementById('story-title').focus({preventScroll:true});document.getElementById('story').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
 }
 chooser.addEventListener('click',e=>{const a=e.target.closest('[data-sector]');if(!a||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();history.pushState(null,'',a.href);showBusiness(true);});

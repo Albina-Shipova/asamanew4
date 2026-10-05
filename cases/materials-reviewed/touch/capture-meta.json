@@ -1,0 +1,66 @@
+{
+  "width": 1920,
+  "height": 9068,
+  "frames": [
+    {
+      "src": "materials-reviewed/touch/orbit-01.webp",
+      "label": "Раздел 1",
+      "y": 0,
+      "height": 1000
+    },
+    {
+      "src": "materials-reviewed/touch/orbit-02.webp",
+      "label": "Раздел 2",
+      "y": 1076,
+      "height": 1000
+    },
+    {
+      "src": "materials-reviewed/touch/orbit-03.webp",
+      "label": "Раздел 3",
+      "y": 2177,
+      "height": 1000
+    },
+    {
+      "src": "materials-reviewed/touch/orbit-04.webp",
+      "label": "Раздел 4",
+      "y": 3004,
+      "height": 1000
+    },
+    {
+      "src": "materials-reviewed/touch/orbit-05.webp",
+      "label": "Раздел 5",
+      "y": 3664,
+      "height": 1000
+    },
+    {
+      "src": "materials-reviewed/touch/orbit-06.webp",
+      "label": "Раздел 6",
+      "y": 4627,
+      "height": 1000
+    },
+    {
+      "src": "materials-reviewed/touch/orbit-07.webp",
+      "label": "Раздел 7",
+      "y": 5467,
+      "height": 1000
+    },
+    {
+      "src": "materials-reviewed/touch/orbit-08.webp",
+      "label": "Раздел 8",
+      "y": 6269,
+      "height": 1000
+    },
+    {
+      "src": "materials-reviewed/touch/orbit-09.webp",
+      "label": "Раздел 9",
+      "y": 7209,
+      "height": 1000
+    },
+    {
+      "src": "materials-reviewed/touch/orbit-10.webp",
+      "label": "Раздел 10",
+      "y": 8068,
+      "height": 1000
+    }
+  ]
+}
