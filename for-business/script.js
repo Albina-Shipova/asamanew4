@@ -296,6 +296,7 @@ const businessData={
   }
 };
 const businessCases={"dentistry":["zdorzub","ЗдорЗуб","Стоматология"],"medical":["spasibodoctor","Спасибо, Доктор!","Медицинский центр"],"beauty":["krasivaya","Красивая Ты","Красота и уход"],"massage":["touch","Прикосновение","Массаж и уход за телом"],"build":["remontsurgut","РемПроф","Ремонт квартир"],"design":["belous","Виктория Черноус","Дизайн интерьеров"],"hotel":["les","ЛЕС","Отдых и гостеприимство"]};
+const businessSecondaryCases={dentistry:["masterulibok","Мастерская улыбок","Стоматология","https://masterulibok.ru/"],build:["agaf","Агафонов","Ремонт и строительство","https://agaf.asama.site/"]};
 const scenario=document.getElementById('business-scenario');
 
 const chooser=document.querySelector('.business-sector-grid');
@@ -322,12 +323,23 @@ function showBusiness(scroll=false){
  const liveLink=document.getElementById('example-live-link');
  liveLink.hidden=!liveProject;
  if(liveProject)liveLink.href=liveProject;
- const originalCover = ['touch', 'socvetie', 'krasivaya'].includes(c[0]);
+ const originalCover = ['touch', 'socvetie', 'krasivaya','masterulibok'].includes(c[0]);
  document.getElementById('example-image').src='../cases/'+(originalCover?'materials/':'materials-reviewed/')+c[0]+'/cover.webp';
  document.getElementById('example-image').alt='Главная страница проекта «'+c[1]+'»';
  document.getElementById('example-name').textContent=c[1];document.getElementById('example-category').textContent=c[2];
  const secondary=document.getElementById('example-secondary');
- secondary.hidden=key!=='build';
+ const secondaryCase=businessSecondaryCases[key];
+ secondary.hidden=!secondaryCase;
+ if(secondaryCase){
+  const [slug,name,category,url]=secondaryCase;
+  document.getElementById('example-secondary-category').textContent=category;
+  document.getElementById('example-secondary-name').textContent=name;
+  document.getElementById('example-secondary-preview-link').href='../cases/index.html?project='+slug;
+  document.getElementById('example-secondary-live-link').href=url;
+  const secondaryOriginalCover=slug==='masterulibok';
+  document.getElementById('example-secondary-image').src='../cases/'+(secondaryOriginalCover?'materials/':'materials-reviewed/')+slug+'/cover.webp';
+  document.getElementById('example-secondary-image').alt='Обложка проекта «'+name+'»';
+ }
  if(scroll){document.getElementById('story-title').focus({preventScroll:true});document.getElementById('story').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
 }
 chooser.addEventListener('click',e=>{const a=e.target.closest('[data-sector]');if(!a||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();history.pushState(null,'',a.href);showBusiness(true);});

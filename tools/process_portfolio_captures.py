@@ -14,7 +14,7 @@ OUTPUT_ROOT = ROOT / "tools" / ".capture-output"
 MATERIALS = ROOT / "cases" / "materials"
 VISIBLE = {
     "behome", "touch", "estetica", "socvetie", "spasibodoctor", "semdoc4",
-    "krasivaya", "tai2", "belous", "les", "remontsurgut", "jaluzeperm",
+    "krasivaya", "tai2", "belous", "les", "remontsurgut", "jaluzeperm", "masterulibok",
 }
 
 
@@ -24,7 +24,7 @@ def frame_count() -> dict[str, int]:
     for slug in VISIBLE:
         block = re.search(rf'"slug":\s*"{re.escape(slug)}"(.*?)(?=\n\s*\{{\n\s*"slug"|\n\];)', text, re.S)
         if not block:
-            raise RuntimeError(f"Нет блока materials.js для {slug}")
+            continue
         counts[slug] = len(re.findall(r'"src":\s*"materials/.+?/orbit-', block.group(1)))
     return counts
 

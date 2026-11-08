@@ -806,6 +806,23 @@ const reviewed = {
     "cover": "materials-reviewed/zdorzub/cover.webp",
     "thumb": "materials-reviewed/zdorzub/thumb.webp",
     "full": "materials-reviewed/zdorzub/full.webp"
+  },
+  "masterulibok": {
+    "width": 1600,
+    "height": 7812,
+    "frames": [
+      {"src":"materials-reviewed/masterulibok/orbit-01.webp","label":"Главная и преимущества","y":0,"height":1000},
+      {"src":"materials-reviewed/masterulibok/orbit-02.webp","label":"Знакомство с врачом","y":1000,"height":1000},
+      {"src":"materials-reviewed/masterulibok/orbit-03.webp","label":"Кабинет и диагностика","y":2000,"height":1000},
+      {"src":"materials-reviewed/masterulibok/orbit-04.webp","label":"Услуги и цены","y":3000,"height":1000},
+      {"src":"materials-reviewed/masterulibok/orbit-05.webp","label":"Результаты лечения","y":4000,"height":1000},
+      {"src":"materials-reviewed/masterulibok/orbit-06.webp","label":"Отзывы пациентов","y":5000,"height":1000},
+      {"src":"materials-reviewed/masterulibok/orbit-07.webp","label":"Вопросы и запись","y":6000,"height":1000},
+      {"src":"materials-reviewed/masterulibok/orbit-08.webp","label":"Контакты","y":7000,"height":812}
+    ],
+    "cover":"materials-reviewed/masterulibok/cover.webp",
+    "thumb":"materials-reviewed/masterulibok/thumb.webp",
+    "full":"materials-reviewed/masterulibok/full.webp"
   }
 };
 for (const project of window.PORTFOLIO_MATERIALS || []) { if (reviewed[project.slug]) Object.assign(project, reviewed[project.slug]); }

@@ -222,6 +222,26 @@ window.PORTFOLIO_MATERIALS=[
     ]
   },
   {
+    "slug": "masterulibok",
+    "name": "Мастерская улыбок",
+    "url": "https://masterulibok.ru/",
+    "logo": "assets/logos/masterulibok.svg",
+    "cover": "materials/masterulibok/cover.webp",
+    "full": "materials/masterulibok/full.webp",
+    "width": 1600,
+    "height": 7812,
+    "frames": [
+      {"src":"materials/masterulibok/orbit-01.webp","label":"Главная и преимущества","y":0,"height":1000},
+      {"src":"materials/masterulibok/orbit-02.webp","label":"Знакомство с врачом","y":1000,"height":1000},
+      {"src":"materials/masterulibok/orbit-03.webp","label":"Кабинет и диагностика","y":2000,"height":1000},
+      {"src":"materials/masterulibok/orbit-04.webp","label":"Услуги и цены","y":3000,"height":1000},
+      {"src":"materials/masterulibok/orbit-05.webp","label":"Результаты лечения","y":4000,"height":1000},
+      {"src":"materials/masterulibok/orbit-06.webp","label":"Отзывы пациентов","y":5000,"height":1000},
+      {"src":"materials/masterulibok/orbit-07.webp","label":"Вопросы и запись","y":6000,"height":1000},
+      {"src":"materials/masterulibok/orbit-08.webp","label":"Контакты","y":7000,"height":812}
+    ]
+  },
+  {
     "slug": "agaf",
     "name": "Агафонов",
     "url": "https://github.com/asamasite/agafonov3",
@@ -1093,5 +1113,5 @@ window.PORTFOLIO_MATERIALS=[
   }
 ];
 
-const PORTFOLIO_ORDER=["touch","socvetie","krasivaya","zdorzub","agaf","tai2","behome","estetica","les","semdoc4","belous","spasibodoctor","gracekelly","bmstair","stroyservis39","remontsurgut"];
+const PORTFOLIO_ORDER=["touch","socvetie","krasivaya","zdorzub","masterulibok","agaf","tai2","behome","estetica","les","semdoc4","belous","spasibodoctor","gracekelly","bmstair","stroyservis39","remontsurgut"];
 window.PORTFOLIO_MATERIALS.sort((a,b)=>PORTFOLIO_ORDER.indexOf(a.slug)-PORTFOLIO_ORDER.indexOf(b.slug));
