@@ -295,7 +295,7 @@ const businessData={
     ]
   }
 };
-const businessCases={"dentistry":["zdorzub","ЗдорЗуб","Стоматология"],"medical":["spasibodoctor","Спасибо, Доктор!","Медицинский центр"],"beauty":["krasivaya","Красивая Ты","Красота и уход"],"massage":["touch","Прикосновение","Массаж и уход за телом"],"build":["remontsurgut","РемПроф","Ремонт квартир"],"design":["belous","Виктория Черноус","Дизайн интерьеров"],"hotel":["les","ЛЕС","Отдых и гостеприимство"]};
+const businessCases={"dentistry":["zdorzub","ЗдорЗуб","Стоматология"],"medical":["spasibodoctor","Спасибо, Доктор!","Медицинский центр"],"beauty":["krasivaya","Красивая Ты","Красота и уход"],"massage":["touch","Прикосновение","Массаж и уход за телом"],"build":["remontsurgut","РемПроф","Ремонт квартир"],"hotel":["les","ЛЕС","Отдых и гостеприимство"]};
 const businessSecondaryCases={dentistry:["masterulibok","Мастерская улыбок","Стоматология","https://masterulibok.ru/"],build:["agaf","Агафонов","Ремонт и строительство","https://agaf.asama.site/"]};
 const scenario=document.getElementById('business-scenario');
 
@@ -317,6 +317,8 @@ function showBusiness(scroll=false){
  for(const id of ['bad','good'])document.getElementById(id).innerHTML=d[id].map(s=>'<li>'+s+'</li>').join('');
  document.getElementById('journey').innerHTML=['Нашёл вас','Открыл сайт','Убедился в выборе',d.steps[0]].map((s,i)=>'<li><span>0'+(i+1)+'</span><h3>'+s+'</h3><p>'+['В картах, поиске или соцсетях.','Узнал об услуге и условиях.','Посмотрел специалистов, работы или ответы на вопросы.','Связался удобным способом.'][i]+'</p></li>').join('');
  const c=businessCases[key];
+ document.querySelector('.business-example').hidden=!c;
+ if(c){
  document.getElementById('example-caption').textContent='Пример из нашего портфолио. Структуру и функции вашего сайта подберём после обсуждения задачи.';
  document.getElementById('example-preview-link').href='../cases/index.html?project='+c[0];
  const liveProject={touch:'https://ramprikosnovenie.ru/',socvetie:'https://будем.рф/',krasivaya:'https://красивая-ты.рф/',zdorzub:'https://zdorzyb.asama.site/'}[c[0]]||'';
@@ -339,6 +341,7 @@ function showBusiness(scroll=false){
   const secondaryOriginalCover=slug==='masterulibok';
   document.getElementById('example-secondary-image').src='../cases/'+(secondaryOriginalCover?'materials/':'materials-reviewed/')+slug+'/cover.webp';
   document.getElementById('example-secondary-image').alt='Обложка проекта «'+name+'»';
+ }
  }
  if(scroll){document.getElementById('story-title').focus({preventScroll:true});document.getElementById('story').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
 }

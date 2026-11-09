@@ -716,66 +716,6 @@ window.PORTFOLIO_MATERIALS=[
     ]
   },
   {
-    "slug": "belous",
-    "name": "Виктория Черноус",
-    "url": "https://belous.asama.site/",
-    "logo": "assets/logos/belous.png",
-    "cover": "materials/belous/cover.webp",
-    "full": "materials/belous/full.webp?v=chernous2",
-    "width": 1600,
-    "height": 6571,
-    "frames": [
-      {
-        "src": "materials/belous/orbit-01.webp",
-        "label": "Раздел 1",
-        "y": 0,
-        "height": 847
-      },
-      {
-        "src": "materials/belous/orbit-02.webp",
-        "label": "Проект ведётодин человек",
-        "y": 847,
-        "height": 792
-      },
-      {
-        "src": "materials/belous/orbit-03.webp",
-        "label": "Ровно столько проекта,сколько вам нужно",
-        "y": 1639,
-        "height": 951
-      },
-      {
-        "src": "materials/belous/orbit-04.webp",
-        "label": "Пространство в деталях",
-        "y": 2590,
-        "height": 1364
-      },
-      {
-        "src": "materials/belous/orbit-05.webp",
-        "label": "Красиво —и выполнимо",
-        "y": 3954,
-        "height": 867
-      },
-      {
-        "src": "materials/belous/orbit-06.webp",
-        "label": "Раздел 6",
-        "y": 4821,
-        "height": 480
-      },
-      {
-        "src": "materials/belous/orbit-07.webp",
-        "label": "Словами клиентов",
-        "y": 5301,
-        "height": 615
-      },
-      {
-        "src": "materials/belous/orbit-08.webp",
-        "label": "Начнём с вашего пространства?",
-        "y": 5916,
-        "height": 655
-      }
-    ]
-  },
-  {
     "slug": "spasibodoctor",
     "name": "Спасибо, Доктор!",
     "url": "https://spasibodoctor.asama.site/",
@@ -1113,5 +1053,5 @@ window.PORTFOLIO_MATERIALS=[
   }
 ];
 
-const PORTFOLIO_ORDER=["touch","socvetie","krasivaya","zdorzub","masterulibok","agaf","tai2","behome","estetica","les","semdoc4","belous","spasibodoctor","gracekelly","bmstair","stroyservis39","remontsurgut"];
+const PORTFOLIO_ORDER=["touch","socvetie","krasivaya","zdorzub","masterulibok","agaf","tai2","behome","estetica","les","semdoc4","spasibodoctor","gracekelly","bmstair","stroyservis39","remontsurgut"];
 window.PORTFOLIO_MATERIALS.sort((a,b)=>PORTFOLIO_ORDER.indexOf(a.slug)-PORTFOLIO_ORDER.indexOf(b.slug));
