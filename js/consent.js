@@ -4,6 +4,7 @@
 (() => {
   const KEY = 'asama-cookie-consent';
   const COUNTER = 114402888;
+  const analyticsEnabled = false;
   const policyUrl = new URL('../privacy-policy.html', document.currentScript.src).href;
 
   const read = () => { try { return localStorage.getItem(KEY); } catch { return null; } };
@@ -11,7 +12,7 @@
 
   let loaded = false;
   function loadMetrika() {
-    if (loaded) return;
+    if (!analyticsEnabled || loaded) return;
     loaded = true;
     (function (m, e, t, r, i, k, a) {
       m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
@@ -48,8 +49,8 @@
     bar.className = 'cc-bar';
     bar.setAttribute('role', 'dialog');
     bar.setAttribute('aria-label', 'Согласие на использование cookie');
-    bar.innerHTML = `<p>Сайт использует cookie и Яндекс Метрику, чтобы считать посещения и улучшать сайт.
-      Метрика включится только с вашего согласия. <a href="${policyUrl}#cookies">Подробнее</a></p>
+    bar.innerHTML = `<p>Яндекс Метрика сейчас отключена.
+      После включения аналитики счётчик будет запускаться только с вашего согласия. <a href="${policyUrl}#cookies">Подробнее</a></p>
       <div class="cc-btns"><button type="button" class="cc-no">Отказаться</button>
       <button type="button" class="cc-yes">Принять</button></div>`;
     bar.querySelector('.cc-yes').onclick = () => { save('yes'); bar.hidden = true; loadMetrika(); };
